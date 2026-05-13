@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#coconutpalmmod:coconut_palm_tree_spawnable",
+  "features": "coconutpalmmod:coconut_palm_tree",
+  "step": "vegetal_decoration"
+}

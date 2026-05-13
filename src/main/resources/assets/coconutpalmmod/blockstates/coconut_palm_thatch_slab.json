@@ -1,0 +1,18 @@
+{
+  "variants": {
+"type=bottom,facing=north": { "model": "coconutpalmmod:block/coconut_palm_thatch_slab", "y": 180 },
+"type=bottom,facing=east":  { "model": "coconutpalmmod:block/coconut_palm_thatch_slab", "y": 270 },
+"type=bottom,facing=south": { "model": "coconutpalmmod:block/coconut_palm_thatch_slab", "y": 0 },
+"type=bottom,facing=west":  { "model": "coconutpalmmod:block/coconut_palm_thatch_slab", "y": 90 },
+
+"type=top,facing=north": { "model": "coconutpalmmod:block/coconut_palm_thatch_slab_top", "y": 180 },
+"type=top,facing=east":  { "model": "coconutpalmmod:block/coconut_palm_thatch_slab_top", "y": 270 },
+"type=top,facing=south": { "model": "coconutpalmmod:block/coconut_palm_thatch_slab_top", "y": 0 },
+"type=top,facing=west":  { "model": "coconutpalmmod:block/coconut_palm_thatch_slab_top", "y": 90 },
+
+"type=double,facing=north": { "model": "coconutpalmmod:block/coconut_palm_thatch", "y": 180 },
+"type=double,facing=east":  { "model": "coconutpalmmod:block/coconut_palm_thatch", "y": 270 },
+"type=double,facing=south": { "model": "coconutpalmmod:block/coconut_palm_thatch", "y": 0 },
+"type=double,facing=west":  { "model": "coconutpalmmod:block/coconut_palm_thatch", "y": 90 }
+}
+}

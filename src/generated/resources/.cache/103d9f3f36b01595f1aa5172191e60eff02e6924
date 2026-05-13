@@ -1,0 +1,4 @@
+// 1.20.1	2026-04-25T01:36:10.2662549	Registries
+a286c9ce3774ac770193cc7105e6aba1531f9bb8 data/coconutpalmmod/forge/biome_modifier/add_coconut_palm_tree.json
+94df88f528d9ac96556c869b3a76e63ef90f9af6 data/coconutpalmmod/worldgen/configured_feature/coconut_palm_tree.json
+cd2c55b986c5f7faf97e95878cc2be8f2bc78b87 data/coconutpalmmod/worldgen/placed_feature/coconut_palm_tree.json

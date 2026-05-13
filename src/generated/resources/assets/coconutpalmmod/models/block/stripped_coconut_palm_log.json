@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "coconutpalmmod:block/stripped_coconut_palm_log_top",
+    "side": "coconutpalmmod:block/stripped_coconut_palm_log"
+  }
+}

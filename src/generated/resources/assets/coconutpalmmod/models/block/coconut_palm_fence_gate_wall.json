@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_fence_gate_wall",
+  "textures": {
+    "texture": "coconutpalmmod:block/coconut_palm_planks"
+  }
+}

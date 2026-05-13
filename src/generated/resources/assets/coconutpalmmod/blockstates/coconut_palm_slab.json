@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "coconutpalmmod:block/coconut_palm_slab"
+    },
+    "type=double": {
+      "model": "coconutpalmmod:block/coconut_palm_planks"
+    },
+    "type=top": {
+      "model": "coconutpalmmod:block/coconut_palm_slab_top"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+// 1.20.1	2026-05-03T14:41:17.3568986	Tags for minecraft:block mod id coconutpalmmod
+339b715aa537bad784fa59489d1965f5ca859d43 data/coconutpalmmod/tags/blocks/coconut_palm_log.json
+7d40cabf7ce916c26ca8d9bf24a7021004e6bff5 data/minecraft/tags/blocks/buttons.json
+59678309ffbf308d851029f9dbf6d3a93dd0c1e0 data/minecraft/tags/blocks/doors.json
+dd2f2e8e15607cf30441339e734c698ba71380ae data/minecraft/tags/blocks/fences.json
+d9e54b97b2e5d92bee29e8c13dcd8dc4ede9548d data/minecraft/tags/blocks/fence_gates.json
+fdba39d4baa82f627c4b597e21c76b4759dac95e data/minecraft/tags/blocks/leaves.json
+173c58f507f7bc55cd2fb21c69b7fe672092c1ef data/minecraft/tags/blocks/logs.json
+339b715aa537bad784fa59489d1965f5ca859d43 data/minecraft/tags/blocks/logs_that_burn.json
+fb2508c87a0bdb4da6f3aec0bc3c4195476175df data/minecraft/tags/blocks/mineable/axe.json
+627665a7143fc2ead1431f751327bc093ddb2367 data/minecraft/tags/blocks/mineable/hoe.json
+eeefb72af117e5eac40257a263648d77bd26d392 data/minecraft/tags/blocks/planks.json
+f5dc0fff86bf8f801732757829007603ce0735dd data/minecraft/tags/blocks/pressure_plates.json
+c1dab74a76ba00a49729adbb1b93c2afc8b25919 data/minecraft/tags/blocks/saplings.json
+ccaeaecc11c136ec08e0830a54aec5005fae2c27 data/minecraft/tags/blocks/slabs.json
+ac6dd80c4ad8d0d67b729e0b6d041aeb89047176 data/minecraft/tags/blocks/stairs.json
+3afc8d8d1a7c06ef40ff08937e177bc7a2201d98 data/minecraft/tags/blocks/trapdoors.json

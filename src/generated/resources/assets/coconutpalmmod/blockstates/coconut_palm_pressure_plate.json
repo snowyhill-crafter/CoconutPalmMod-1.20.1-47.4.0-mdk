@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "coconutpalmmod:block/coconut_palm_pressure_plate"
+    },
+    "powered=true": {
+      "model": "coconutpalmmod:block/coconut_palm_pressure_plate_down"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "coconutpalmmod:coconut_palm_planks"
+    }
+  ],
+  "result": {
+    "item": "coconutpalmmod:coconut_palm_button"
+  }
+}

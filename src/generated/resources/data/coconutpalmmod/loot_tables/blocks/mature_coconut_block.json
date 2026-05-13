@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "coconutpalmmod:mature_coconut"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "coconutpalmmod:blocks/mature_coconut_block"
+}

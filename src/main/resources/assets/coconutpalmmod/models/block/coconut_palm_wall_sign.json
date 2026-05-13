@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_sign",
+  "textures": {
+    "particle": "coconutpalmmod:block/coconut_palm_planks"
+  }
+}
