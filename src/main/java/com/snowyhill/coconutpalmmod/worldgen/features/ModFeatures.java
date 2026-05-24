@@ -4,6 +4,7 @@ package com.snowyhill.coconutpalmmod.worldgen.features;
 import com.snowyhill.coconutpalmmod.CoconutPalmMod;
 import com.snowyhill.coconutpalmmod.registry.ModBlocks;
 import com.snowyhill.coconutpalmmod.worldgen.features.decorator.CoconutPalmFruitDecorator;
+import com.snowyhill.coconutpalmmod.worldgen.features.decorator.CoconutPalmGroundDecorator;
 import com.snowyhill.coconutpalmmod.worldgen.features.foliage.PalmFoliagePlacer;
 import com.snowyhill.coconutpalmmod.worldgen.features.trunk.CoconutTrunkPlacer;
 import net.minecraft.core.registries.Registries;
@@ -18,11 +19,9 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
-
+import net.minecraft.world.level.block.Blocks;
 import java.util.List;
 
 public class ModFeatures {
@@ -31,7 +30,8 @@ public class ModFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> COCONUT_PALM_TREE_KEY =
             createKey("coconut_palm_tree");
 
-
+    public static final ResourceKey<ConfiguredFeature<?, ?>> HIBISCUS_BUSH_KEY =
+            createKey("hibiscus_bush");
 
 
 
@@ -68,10 +68,59 @@ public class ModFeatures {
                 )
                         .ignoreVines()
                         .decorators(List.of(
-                                new CoconutPalmFruitDecorator(0.75F) // 実が多すぎるなら 0.10〜0.16Fで調整
-                        ))
+                                new CoconutPalmFruitDecorator(0.75F), // 実が多すぎるなら 0.10〜0.16Fで調整
+                                new CoconutPalmGroundDecorator()))
                         .build()
         );
+
+
+        FeatureUtils.register(context, HIBISCUS_BUSH_KEY, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+
+                        BlockStateProvider.simple(Blocks.OAK_LOG),
+
+                        new StraightTrunkPlacer(
+                                1,
+                                0,
+                                0
+                        ),
+
+                        new net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider(
+                                net.minecraft.util.random.SimpleWeightedRandomList.<net.minecraft.world.level.block.state.BlockState>builder()
+
+                                        .add(
+                                                ModBlocks.HIBISCUS_LEAVES.get()
+                                                        .defaultBlockState()
+                                                        .setValue(net.minecraft.world.level.block.LeavesBlock.PERSISTENT, false),
+                                                1
+                                        )
+
+                                        .add(
+                                                ModBlocks.FLOWERING_HIBISCUS_LEAVES.get()
+                                                        .defaultBlockState()
+                                                        .setValue(net.minecraft.world.level.block.LeavesBlock.PERSISTENT, false),
+                                                1
+                                        )
+
+                                        .build()
+                        ),
+
+                        new BlobFoliagePlacer(
+                                ConstantInt.of(2),
+                                ConstantInt.of(0),
+                                1
+                        ),
+
+                        new TwoLayersFeatureSize(1, 0, 1)
+
+                )
+                        .dirt(BlockStateProvider.simple(Blocks.GRASS_BLOCK))
+                        .ignoreVines()
+                        .build()
+        );
+
+
+
 
     }
 

@@ -22,7 +22,22 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(ModBiomeTags.
                 COCONUT_PALM_TREE_SPAWNABLE)
-                .add(Biomes.BEACH);
+                .add(Biomes.BEACH)
+                .add(Biomes.WARM_OCEAN)
+                .add(Biomes.LUKEWARM_OCEAN);
+
+
+        tag(ModBiomeTags.
+                HIBISCUS_BUSH_SPAWNABLE)
+                .add(Biomes.BEACH)
+                .add(Biomes.WARM_OCEAN)
+                .add(Biomes.LUKEWARM_OCEAN);
+
+        tag(ModBiomeTags.JUNGLE_BUSH_SPAWNABLE)
+                .add(Biomes.BEACH)
+                .add(Biomes.WARM_OCEAN)
+                .add(Biomes.LUKEWARM_OCEAN);
 
     }
+
 }

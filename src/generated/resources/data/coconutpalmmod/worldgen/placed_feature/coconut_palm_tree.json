@@ -42,6 +42,10 @@
           }
         }
       }
+    },
+    {
+      "type": "coconutpalmmod:beach_grass_patch",
+      "value": 14
     }
   ]
 }

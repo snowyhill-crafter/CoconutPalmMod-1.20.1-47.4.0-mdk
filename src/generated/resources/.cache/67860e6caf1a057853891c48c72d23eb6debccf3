@@ -1,2 +1,4 @@
-// 1.20.1	2026-04-25T01:36:10.2672556	Tags for minecraft:worldgen/biome mod id coconutpalmmod
-208ad58db65540373e309e41d4444b16f2e8a713 data/coconutpalmmod/tags/worldgen/biome/coconut_palm_tree_spawnable.json
+// 1.20.1	2026-05-24T21:42:21.265425	Tags for minecraft:worldgen/biome mod id coconutpalmmod
+74cb8133bd6d3c0233b8a15b6ad15828d29640e0 data/coconutpalmmod/tags/worldgen/biome/coconut_palm_tree_spawnable.json
+74cb8133bd6d3c0233b8a15b6ad15828d29640e0 data/coconutpalmmod/tags/worldgen/biome/hibiscus_bush_spawnable.json
+74cb8133bd6d3c0233b8a15b6ad15828d29640e0 data/coconutpalmmod/tags/worldgen/biome/jungle_bush_spawnable.json

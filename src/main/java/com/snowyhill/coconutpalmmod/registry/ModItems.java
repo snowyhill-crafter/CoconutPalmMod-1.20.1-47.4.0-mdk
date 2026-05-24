@@ -173,6 +173,20 @@ public class ModItems {
             "coconut_palm_leaf",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> HIBISCUS_ITEM = ITEMS.register(
+            "hibiscus",
+            () -> new BlockItem(ModBlocks.HIBISCUS.get(), new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> HIBISCUS_LEAVES_ITEM = ITEMS.register(
+            "hibiscus_leaves",
+            () -> new BlockItem(ModBlocks.HIBISCUS_LEAVES.get(), new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> FLOWERING_HIBISCUS_LEAVES_ITEM = ITEMS.register(
+            "flowering_hibiscus_leaves",
+            () -> new BlockItem(ModBlocks.FLOWERING_HIBISCUS_LEAVES.get(), new Item.Properties())
+    );
 
     public static void register(IEventBus eventBus) {
         // レジストリをイベントバスに登録

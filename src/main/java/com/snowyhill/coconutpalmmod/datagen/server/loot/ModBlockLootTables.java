@@ -78,7 +78,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                                 .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS))))
                         // それ以外は frond を 1～3 個
                         .add(LootItem.lootTableItem(ModItems.COCONUT_PALM_LEAF.get())
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
                                 .when(InvertedLootItemCondition.invert(
                                         MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS))
                                 )))
@@ -103,7 +103,52 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                         .add(LootItem.lootTableItem(ModItems.MATURE_COCONUT.get())
                         )));
 
+        this.dropSelf(ModBlocks.HIBISCUS.get());
 
+
+        this.add(ModBlocks.HIBISCUS_LEAVES.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+
+                        // ハサミなら茂みそのもの
+                        .add(LootItem.lootTableItem(ModBlocks.HIBISCUS_LEAVES.get())
+                                .when(MatchTool.toolMatches(
+                                        ItemPredicate.Builder.item().of(Items.SHEARS)
+                                )))
+
+                        // 通常破壊なら低確率でHIBISCUS
+                        .add(LootItem.lootTableItem(ModBlocks.HIBISCUS.get())
+                                .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                .when(InvertedLootItemCondition.invert(
+                                        MatchTool.toolMatches(
+                                                ItemPredicate.Builder.item().of(Items.SHEARS)
+                                        )
+                                )))
+                )
+        );
+
+
+
+        this.add(ModBlocks.FLOWERING_HIBISCUS_LEAVES.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+
+                        // ハサミなら茂みそのもの
+                        .add(LootItem.lootTableItem(ModBlocks.FLOWERING_HIBISCUS_LEAVES.get())
+                                .when(MatchTool.toolMatches(
+                                        ItemPredicate.Builder.item().of(Items.SHEARS)
+                                )))
+
+                        // 通常破壊なら低確率でHIBISCUS
+                        .add(LootItem.lootTableItem(ModBlocks.HIBISCUS.get())
+                                .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                .when(InvertedLootItemCondition.invert(
+                                        MatchTool.toolMatches(
+                                                ItemPredicate.Builder.item().of(Items.SHEARS)
+                                        )
+                                )))
+                )
+        );
     }
 
     @Override

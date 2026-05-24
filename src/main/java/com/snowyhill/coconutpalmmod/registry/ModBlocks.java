@@ -4,6 +4,7 @@ import com.snowyhill.coconutpalmmod.CoconutPalmMod;
 import com.snowyhill.coconutpalmmod.block.*;
 import com.snowyhill.coconutpalmmod.client.ModWoodTypes;
 import com.snowyhill.coconutpalmmod.worldgen.tree.CoconutPalmTreeGrower;
+import com.snowyhill.coconutpalmmod.worldgen.tree.HibiscusTreeGrower;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -193,6 +194,33 @@ public class ModBlocks {
                     BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)
             )
     );
+
+    public static final RegistryObject<Block> HIBISCUS = BLOCKS.register(
+            "hibiscus",
+            () -> new HibiscusBlock(
+                    new HibiscusTreeGrower(),
+                    BlockBehaviour.Properties.copy(Blocks.AZALEA)
+            )
+    );
+
+    public static final RegistryObject<Block> HIBISCUS_LEAVES = BLOCKS.register(
+            "hibiscus_leaves",
+            () -> new ModLeavesBlock(
+                    BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES)
+                            .randomTicks()
+            )
+    );
+
+
+
+    public static final RegistryObject<Block> FLOWERING_HIBISCUS_LEAVES = BLOCKS.register(
+            "flowering_hibiscus_leaves",
+            () -> new ModLeavesBlock(
+                    BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES)
+                            .randomTicks()
+            )
+    );
+
 
     /* ブロックアイテム作成用メソッド */
    // private static <T extends Block> RegistryObject<T> registerBlockItem(String name,

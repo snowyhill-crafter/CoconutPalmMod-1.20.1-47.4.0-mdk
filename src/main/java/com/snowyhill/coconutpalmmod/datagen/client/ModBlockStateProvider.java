@@ -4,12 +4,10 @@ package com.snowyhill.coconutpalmmod.datagen.client;
 
 import com.snowyhill.coconutpalmmod.CoconutPalmMod;
 import com.snowyhill.coconutpalmmod.registry.ModBlocks;
-import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -69,7 +67,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         ModBlocks.COCONUT_PALM_PRESSURE_PLATE.get(),
                 blockTexture(ModBlocks.COCONUT_PALM_PLANKS.get()));
 
-
+        simpleBlockWithItem(
+                ModBlocks.HIBISCUS.get(),
+                models().withExistingParent(
+                                "hibiscus",
+                                mcLoc("block/azalea")
+                        )
+                        .texture("top", modLoc("block/hibiscus_top"))
+                        .texture("side", modLoc("block/hibiscus_side"))
+                        .texture("plant", modLoc("block/hibiscus_plant"))
+                        .renderType("cutout")
+        );
+        simpleLeaves(ModBlocks.HIBISCUS_LEAVES);
+        simpleLeaves(ModBlocks.FLOWERING_HIBISCUS_LEAVES);
         //horizontalBlock(ModBlocks.COCONUT_PALM_THATCH.get(),
                 //models().cubeAll("coconut_palm_thatch", modLoc("block/coconut_palm_thatch")));
         //item(ModBlocks.COCONUT_PALM_THATCH);

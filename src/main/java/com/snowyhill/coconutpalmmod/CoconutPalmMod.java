@@ -5,6 +5,7 @@ import com.snowyhill.coconutpalmmod.registry.*;
 import com.snowyhill.coconutpalmmod.worldgen.features.decorator.ModTreeDecorators;
 import com.snowyhill.coconutpalmmod.worldgen.features.foliage.ModFoliagePlacers;
 import com.snowyhill.coconutpalmmod.worldgen.features.trunk.ModTrunkPlacers;
+import com.snowyhill.coconutpalmmod.worldgen.placement.ModPlacementModifiers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -47,7 +48,7 @@ public class CoconutPalmMod
         ModTreeDecorators.DECORATORS.register(modEventBus);
         ModFoliagePlacers.FOLIAGE_PLACERS.register(modEventBus);
         ModTrunkPlacers.TRUNK_PLACERS.register(modEventBus);
-
+        ModPlacementModifiers.PLACEMENT_MODIFIERS.register(modEventBus);
         ModEntities.register(modEventBus);
         ModBlockEntities.register(modEventBus);
     }

@@ -7,14 +7,19 @@ import com.snowyhill.coconutpalmmod.worldgen.features.ModFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
-
+import com.google.common.collect.ImmutableList;
 import java.util.List;
+import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.core.BlockPos;
 
 public class ModPlacement {
 
@@ -22,7 +27,11 @@ public class ModPlacement {
             createKey("coconut_palm_tree");
 
 
+    public static final ResourceKey<PlacedFeature> HIBISCUS_BUSH =
+            createKey("hibiscus_bush");
 
+    public static final ResourceKey<PlacedFeature> JUNGLE_BUSH =
+            createKey("jungle_bush");
 
     public static void bootstap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures =
@@ -30,12 +39,61 @@ public class ModPlacement {
 
 
         // 木の配置情報を設定
+        List<PlacementModifier> coconutPlacements = new java.util.ArrayList<>(
+                VegetationPlacements.treePlacement(
+                        PlacementUtils.countExtra(0, 0.2f, 1),//発生頻度
+                        ModBlocks.COCONUT_PALM_SPROUTS.get()
+                )
+        );
+
+        coconutPlacements.add(BeachGrassPatchPlacement.of(14));//水との距離
+
         PlacementUtils.register(context, COCONUT_PALM_TREE,
                 configuredFeatures.getOrThrow(ModFeatures.COCONUT_PALM_TREE_KEY),
-                VegetationPlacements.treePlacement(
-                        PlacementUtils.countExtra(0, 0.2f, 1),
-                        //1チャンク当たりの本数、追加の確率、追加されるときの本数
-                        ModBlocks.COCONUT_PALM_SPROUTS.get()));
+                coconutPlacements);
+
+
+
+        PlacementUtils.register(context, HIBISCUS_BUSH,
+                configuredFeatures.getOrThrow(ModFeatures.HIBISCUS_BUSH_KEY),
+
+                CountPlacement.of(4),
+
+                InSquarePlacement.spread(),
+
+                PlacementUtils.HEIGHTMAP,
+
+                BlockPredicateFilter.forPredicate(
+                        net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate.matchesBlocks(
+                                new BlockPos(0, -1, 0),
+                                Blocks.GRASS_BLOCK
+                        )
+                ),
+
+                BiomeFilter.biome()
+        );
+
+
+        PlacementUtils.register(context, JUNGLE_BUSH,
+
+                configuredFeatures.getOrThrow(TreeFeatures.JUNGLE_BUSH),
+
+                CountPlacement.of(3),
+
+                InSquarePlacement.spread(),
+
+                PlacementUtils.HEIGHTMAP,
+
+                BlockPredicateFilter.forPredicate(
+                        BlockPredicate.matchesBlocks(
+                                new BlockPos(0, -1, 0),
+                                Blocks.GRASS_BLOCK
+                        )
+                ),
+
+                BiomeFilter.biome()
+        );
+
 
     }
 

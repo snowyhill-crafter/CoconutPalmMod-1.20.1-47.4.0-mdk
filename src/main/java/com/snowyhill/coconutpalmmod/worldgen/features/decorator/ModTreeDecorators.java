@@ -17,7 +17,10 @@ public class ModTreeDecorators {
             DECORATORS.register("coconut_palm_fruit",
                     () -> new TreeDecoratorType<>(CoconutPalmFruitDecorator.CODEC));
 
-
+    public static final RegistryObject<TreeDecoratorType<CoconutPalmGroundDecorator>>
+            COCONUT_PALM_GROUND_DECORATOR =
+            DECORATORS.register("coconut_palm_ground",
+                    () -> new TreeDecoratorType<>(CoconutPalmGroundDecorator.CODEC));
     // 起動時にイベントバスへ登録するコード（メインMod側で呼ぶ）
     public static void register(net.minecraftforge.eventbus.api.IEventBus bus) {
         DECORATORS.register(bus);

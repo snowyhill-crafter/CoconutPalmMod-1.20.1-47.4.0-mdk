@@ -50,8 +50,9 @@ public class ModTabs {
                         pOutput.accept(ModItems.COCONUT_PALM_THATCH_ITEM.get());
                         pOutput.accept(ModItems.COCONUT_PALM_THATCH_SLAB_ITEM.get());
                         pOutput.accept(ModItems.COCONUT_PALM_THATCH_ROOF_ITEM.get());
-
-                      
+                        pOutput.accept(ModItems.HIBISCUS_ITEM.get());
+                        pOutput.accept(ModItems.HIBISCUS_LEAVES_ITEM.get());
+                        pOutput.accept(ModItems.FLOWERING_HIBISCUS_LEAVES_ITEM.get());
                         
                         
                     }))
