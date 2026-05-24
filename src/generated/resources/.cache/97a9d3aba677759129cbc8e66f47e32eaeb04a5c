@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-05T11:41:05.7766668	Item Models: coconutpalmmod
+// 1.20.1	2026-05-24T23:09:33.7668793	Item Models: coconutpalmmod
 cdfde9d283964cffd8f9a08180481f4c8de96f61 assets/coconutpalmmod/models/item/coconut_palm_boat.json
 1e5014428b4a3838064727feba84aaae9c74cd97 assets/coconutpalmmod/models/item/coconut_palm_button.json
 0492edb2907bf192b57b31ccd2dc2b1d29ff3ce0 assets/coconutpalmmod/models/item/coconut_palm_chest_boat.json
@@ -14,4 +14,5 @@ f064c1e4a3515991d7ef0ad3e934cb2e6c6ea4fc assets/coconutpalmmod/models/item/cocon
 f98b0ca88bee594217bd09dbd5449ae2e45df6e2 assets/coconutpalmmod/models/item/coconut_palm_stairs.json
 02db96565025f706624d454f807737c4175c08fb assets/coconutpalmmod/models/item/coconut_palm_trapdoor.json
 fdd3949153e74b4ed608a84f1f215e661b6aeaa0 assets/coconutpalmmod/models/item/green_coconut.json
+196d3c7b7695be33a1d586dd80da350e81b827a5 assets/coconutpalmmod/models/item/hibiscus_flower.json
 05766264998e7cedfc75546ed8baa1530eba25f9 assets/coconutpalmmod/models/item/mature_coconut.json

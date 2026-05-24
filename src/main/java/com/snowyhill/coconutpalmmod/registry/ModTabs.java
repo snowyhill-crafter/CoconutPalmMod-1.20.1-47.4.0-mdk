@@ -53,7 +53,7 @@ public class ModTabs {
                         pOutput.accept(ModItems.HIBISCUS_ITEM.get());
                         pOutput.accept(ModItems.HIBISCUS_LEAVES_ITEM.get());
                         pOutput.accept(ModItems.FLOWERING_HIBISCUS_LEAVES_ITEM.get());
-                        
+                        pOutput.accept(ModItems.HIBISCUS_FLOWER.get());
                         
                     }))
                     .build());

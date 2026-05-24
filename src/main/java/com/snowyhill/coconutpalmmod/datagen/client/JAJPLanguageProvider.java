@@ -51,6 +51,13 @@ public class JAJPLanguageProvider extends LanguageProvider {
         addItem(ModItems.COCONUT_PALM_THATCH_SLAB_ITEM, "ココヤシの葉葺きのハーフブロック");
         addItem(ModItems.COCONUT_PALM_THATCH_ROOF_ITEM, "ココヤシの葉葺きの屋根");
 
+        addBlock(ModBlocks.HIBISCUS, "ハイビスカス");
+        addBlock(ModBlocks.HIBISCUS_LEAVES, "ハイビスカスの葉");
+        addBlock(ModBlocks.FLOWERING_HIBISCUS_LEAVES, "開花したハイビスカスの葉");
+        addItem(ModItems.HIBISCUS_FLOWER, "ハイビスカスの花");
+
+
+
         addEntityType(ModEntities.MOD_CHEST_BOAT, "チェスト付きのボート");
         add("creativetabs.Mod_tab", "ココヤシの木MOD");
 

@@ -188,6 +188,10 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.FLOWERING_HIBISCUS_LEAVES.get(), new Item.Properties())
     );
 
+    public static final RegistryObject<Item> HIBISCUS_FLOWER = ITEMS.register(
+            "hibiscus_flower",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         // レジストリをイベントバスに登録
         ITEMS.register(eventBus);

@@ -26,7 +26,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.GREEN_COCONUT.get());
         basicItem(ModItems.MATURE_COCONUT.get());
         basicItem(ModItems.COCONUT_PALM_LEAF.get());
-
+        basicItem(ModItems.HIBISCUS_FLOWER.get());
 
         itemWithBlock(ModBlocks.COCONUT_PALM_SLAB);
         itemWithBlock(ModBlocks.COCONUT_PALM_STAIRS);

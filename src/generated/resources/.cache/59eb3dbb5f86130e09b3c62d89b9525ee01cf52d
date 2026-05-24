@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-24T21:42:21.2624243	Loot Tables
+// 1.20.1	2026-05-24T23:09:33.7612754	Loot Tables
 bb1a78a6becdb0bb10b2a2698ba5fd012ba043c3 data/coconutpalmmod/loot_tables/blocks/coconut_palm_button.json
 8b268ddfcd65ffb0321f7c8910b5a0eeb7030d1f data/coconutpalmmod/loot_tables/blocks/coconut_palm_door.json
 e21eac85c082ad8f8bd845022678f415d5654b28 data/coconutpalmmod/loot_tables/blocks/coconut_palm_fence.json
@@ -20,7 +20,7 @@ f8733b1b8ccbc75181db008ce949644bd94b0f37 data/coconutpalmmod/loot_tables/blocks/
 66025ce45fff2d360664cfaee701a963ea38967e data/coconutpalmmod/loot_tables/blocks/coconut_palm_wall_hanging_sign.json
 5077b5a0f231ce724407f1e0dbc682423aede2bc data/coconutpalmmod/loot_tables/blocks/coconut_palm_wall_sign.json
 79e0623e4c4517205d80d8c16721be1160f390d4 data/coconutpalmmod/loot_tables/blocks/coconut_palm_wood.json
-ec07dc4f5642cdc0b8749d198dadea432b92a366 data/coconutpalmmod/loot_tables/blocks/flowering_hibiscus_leaves.json
+71fbcc38e7e6bd042ba480d847d8f2781b5fbe7d data/coconutpalmmod/loot_tables/blocks/flowering_hibiscus_leaves.json
 855c49a8aa28844d22d4d0fa92c1ce96b089d0b3 data/coconutpalmmod/loot_tables/blocks/green_coconut_block.json
 35437153dbde7753a565a4329ac7f25014ab3ee8 data/coconutpalmmod/loot_tables/blocks/hibiscus.json
 c98c9cf9701157a5760ae8340635393a1422a2f0 data/coconutpalmmod/loot_tables/blocks/hibiscus_leaves.json

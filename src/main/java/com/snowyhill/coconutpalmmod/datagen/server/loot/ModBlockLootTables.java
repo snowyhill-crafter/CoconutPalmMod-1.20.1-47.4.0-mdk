@@ -133,10 +133,18 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
 
-                        // ハサミなら茂みそのもの
+                        // ハサミなら葉そのもの
                         .add(LootItem.lootTableItem(ModBlocks.FLOWERING_HIBISCUS_LEAVES.get())
                                 .when(MatchTool.toolMatches(
                                         ItemPredicate.Builder.item().of(Items.SHEARS)
+                                )))
+
+                        // 通常破壊なら hibiscus flower 確定
+                        .add(LootItem.lootTableItem(ModItems.HIBISCUS_FLOWER.get())
+                                .when(InvertedLootItemCondition.invert(
+                                        MatchTool.toolMatches(
+                                                ItemPredicate.Builder.item().of(Items.SHEARS)
+                                        )
                                 )))
 
                         // 通常破壊なら低確率でHIBISCUS

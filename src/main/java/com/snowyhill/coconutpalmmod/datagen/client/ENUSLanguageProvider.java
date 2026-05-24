@@ -49,6 +49,11 @@ public class ENUSLanguageProvider extends LanguageProvider {
         addItem(ModItems.COCONUT_PALM_THATCH_SLAB_ITEM, "Coconut Palm Thatch Slab");
         addItem(ModItems.COCONUT_PALM_THATCH_ROOF_ITEM, "Coconut Palm Thatch Roof");
 
+        addBlock(ModBlocks.HIBISCUS, "Hibiscus");
+        addBlock(ModBlocks.HIBISCUS_LEAVES, "Hibiscus Leaves");
+        addBlock(ModBlocks.FLOWERING_HIBISCUS_LEAVES, "Flowering Hibiscus Leaves");
+        addItem(ModItems.HIBISCUS_FLOWER, "Hibiscus Flower");
+
         addEntityType(ModEntities.MOD_CHEST_BOAT, "Boat with Chest");
         add("creativetabs.Mod_tab", "appletreemod");
         

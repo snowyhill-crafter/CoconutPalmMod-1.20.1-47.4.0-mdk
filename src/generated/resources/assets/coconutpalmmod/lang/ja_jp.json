@@ -17,7 +17,10 @@
   "block.coconutpalmmod.coconut_palm_thatch_slab": "ココヤシの葉葺きのハーフブロック",
   "block.coconutpalmmod.coconut_palm_trapdoor": "ココヤシのトラップドア",
   "block.coconutpalmmod.coconut_palm_wood": "ココヤシの木",
+  "block.coconutpalmmod.flowering_hibiscus_leaves": "花の咲いたハイビスカスの葉",
   "block.coconutpalmmod.green_coconut_block": "未熟なココヤシの実",
+  "block.coconutpalmmod.hibiscus": "ハイビスカス",
+  "block.coconutpalmmod.hibiscus_leaves": "ハイビスカスの葉",
   "block.coconutpalmmod.mature_coconut_block": "熟れたココヤシの実",
   "block.coconutpalmmod.stripped_coconut_palm_log": "樹皮を剥いだココヤシの原木",
   "block.coconutpalmmod.stripped_coconut_palm_wood": "樹皮を剥いだココヤシの木",
@@ -27,5 +30,6 @@
   "item.coconutpalmmod.coconut_palm_chest_boat": "チェスト付きのココヤシのボート",
   "item.coconutpalmmod.coconut_palm_leaf": "切り出したココヤシの葉",
   "item.coconutpalmmod.green_coconut": "緑色のココナッツ",
+  "item.coconutpalmmod.hibiscus_flower": "ハイビスカスの花",
   "item.coconutpalmmod.mature_coconut": "熟れたココナッツ"
 }

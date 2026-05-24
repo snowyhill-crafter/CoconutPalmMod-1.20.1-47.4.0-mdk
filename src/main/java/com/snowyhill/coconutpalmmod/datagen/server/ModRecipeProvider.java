@@ -93,6 +93,24 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_stripped_apple_log", has(ModBlocks.STRIPPED_COCONUT_PALM_LOG.get()))
                 .save(pRecipeOutput);
 
+        // hibiscus flower → magenta dye
+        ShapelessRecipeBuilder.shapeless(
+                        RecipeCategory.MISC,
+                        Items.MAGENTA_DYE,
+                        1
+                )
+                .requires(ModItems.HIBISCUS_FLOWER.get())
+                .unlockedBy(
+                        getHasName(ModItems.HIBISCUS_FLOWER.get()),
+                        has(ModItems.HIBISCUS_FLOWER.get())
+                )
+                .save(
+                        pRecipeOutput,
+                        CoconutPalmMod.MOD_ID + ":magenta_dye_from_hibiscus_flower"
+                );
+
+
+
 // 切り出したココヤシの葉 4枚 → ココヤシの葉ブロック 1個
         //ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COCONUT_PALM_LEAVES.get())
         //        .define('#', ModItems.COCONUT_PALM_LEAF.get())
@@ -124,6 +142,8 @@ public class ModRecipeProvider extends RecipeProvider {
         stairs(pRecipeOutput,
                 ModBlocks.COCONUT_PALM_THATCH_ROOF.get(),
                 ModBlocks.COCONUT_PALM_THATCH.get());
+
+
 
        // ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.COCONUT_PALM_BED.get())
        //         .define('#', ModItems.COCONUT_PALM_LEAF.get())
