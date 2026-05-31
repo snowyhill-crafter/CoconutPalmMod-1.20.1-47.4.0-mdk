@@ -61,7 +61,7 @@ public class BeachGrassPatchPlacement extends PlacementFilter {
         // ★追加：
         // 周囲に寒冷バイオームがある場合は生成拒否
         // =========================================================
-        /*
+
         for (int x = -24; x <= 24; x += 8) {
             for (int z = -24; z <= 24; z += 8) {
 
@@ -81,7 +81,7 @@ public class BeachGrassPatchPlacement extends PlacementFilter {
                 }
             }
         }
-*/
+
         return true;
     }
 

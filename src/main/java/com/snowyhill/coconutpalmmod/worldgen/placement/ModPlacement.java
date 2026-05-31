@@ -57,28 +57,7 @@ public class ModPlacement {
         PlacementUtils.register(context, HIBISCUS_BUSH,
                 configuredFeatures.getOrThrow(ModFeatures.HIBISCUS_BUSH_KEY),
 
-                CountPlacement.of(2),//発生頻度
-
-                InSquarePlacement.spread(),
-
-                PlacementUtils.HEIGHTMAP,
-
-                BlockPredicateFilter.forPredicate(
-                        net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate.matchesBlocks(
-                                new BlockPos(0, -1, 0),
-                                Blocks.GRASS_BLOCK
-                        )
-                ),
-
-                BiomeFilter.biome()
-        );
-
-
-        PlacementUtils.register(context, JUNGLE_BUSH,
-
-                configuredFeatures.getOrThrow(TreeFeatures.JUNGLE_BUSH),
-
-                CountPlacement.of(3),//発生頻度
+                CountPlacement.of(3),
 
                 InSquarePlacement.spread(),
 
@@ -90,6 +69,33 @@ public class ModPlacement {
                                 Blocks.GRASS_BLOCK
                         )
                 ),
+
+                // ★寒冷バイオーム隣接時は生成しない
+                BeachGrassPatchPlacement.of(0),
+
+                BiomeFilter.biome()
+        );
+
+
+        PlacementUtils.register(context, JUNGLE_BUSH,
+
+                configuredFeatures.getOrThrow(TreeFeatures.JUNGLE_BUSH),
+
+                CountPlacement.of(3),
+
+                InSquarePlacement.spread(),
+
+                PlacementUtils.HEIGHTMAP,
+
+                BlockPredicateFilter.forPredicate(
+                        BlockPredicate.matchesBlocks(
+                                new BlockPos(0, -1, 0),
+                                Blocks.GRASS_BLOCK
+                        )
+                ),
+
+                // ★寒冷バイオーム隣接時は生成しない
+                BeachGrassPatchPlacement.of(0),
 
                 BiomeFilter.biome()
         );

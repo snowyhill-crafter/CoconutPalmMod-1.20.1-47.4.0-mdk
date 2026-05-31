@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#coconutpalmmod:jungle_bush_spawnable",
+  "features": "coconutpalmmod:jungle_bush",
+  "step": "vegetal_decoration"
+}

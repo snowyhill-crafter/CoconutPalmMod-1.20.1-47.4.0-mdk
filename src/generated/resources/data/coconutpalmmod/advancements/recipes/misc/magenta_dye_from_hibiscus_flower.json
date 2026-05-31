@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hibiscus_flower": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "coconutpalmmod:hibiscus_flower"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "coconutpalmmod:magenta_dye_from_hibiscus_flower"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_hibiscus_flower",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "coconutpalmmod:magenta_dye_from_hibiscus_flower"
+    ]
+  },
+  "sends_telemetry_event": false
+}
