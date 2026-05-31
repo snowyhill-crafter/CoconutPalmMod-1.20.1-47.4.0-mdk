@@ -17,8 +17,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.common.world.ForgeBiomeModifiers;
-import net.minecraftforge.common.world.BiomeModifier;
+
 
 
 public class ModBiomeModifiers {
@@ -84,8 +83,8 @@ public class ModBiomeModifiers {
 
     //登録用メソッド
     private static ResourceKey<BiomeModifier> createKey(String name) {
-       return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS,
-               new ResourceLocation(CoconutPalmMod.MOD_ID,name));
+        return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS,
+                new ResourceLocation(CoconutPalmMod.MOD_ID,name));
     }
 
 

@@ -5,9 +5,6 @@
       {
         "type": "coconutpalmmod:coconut_palm_fruit",
         "chance": 0.75
-      },
-      {
-        "type": "coconutpalmmod:coconut_palm_ground"
       }
     ],
     "dirt_provider": {

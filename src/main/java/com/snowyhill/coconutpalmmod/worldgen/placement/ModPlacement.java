@@ -41,15 +41,15 @@ public class ModPlacement {
         // 木の配置情報を設定
         List<PlacementModifier> coconutPlacements = new java.util.ArrayList<>(
                 VegetationPlacements.treePlacement(
-                        PlacementUtils.countExtra(0, 0.2f, 1),//発生頻度
+                        PlacementUtils.countExtra(1, 0.1f, 1),//発生頻度
                         ModBlocks.COCONUT_PALM_SPROUTS.get()
                 )
         );
 
-        coconutPlacements.add(BeachGrassPatchPlacement.of(14));//水との距離
+        coconutPlacements.add(BeachGrassPatchPlacement.of(4));//水との距離
 
         PlacementUtils.register(context, COCONUT_PALM_TREE,
-                configuredFeatures.getOrThrow(ModFeatures.COCONUT_PALM_TREE_KEY),
+                configuredFeatures.getOrThrow(ModFeatures.BEACH_GRASS_PATCH_KEY),
                 coconutPlacements);
 
 
@@ -57,7 +57,7 @@ public class ModPlacement {
         PlacementUtils.register(context, HIBISCUS_BUSH,
                 configuredFeatures.getOrThrow(ModFeatures.HIBISCUS_BUSH_KEY),
 
-                CountPlacement.of(4),
+                CountPlacement.of(2),//発生頻度
 
                 InSquarePlacement.spread(),
 
@@ -78,7 +78,7 @@ public class ModPlacement {
 
                 configuredFeatures.getOrThrow(TreeFeatures.JUNGLE_BUSH),
 
-                CountPlacement.of(3),
+                CountPlacement.of(3),//発生頻度
 
                 InSquarePlacement.spread(),
 
