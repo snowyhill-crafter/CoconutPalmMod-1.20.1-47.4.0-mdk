@@ -76,7 +76,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                         // ハサミなら葉ブロックそのもの
                         .add(LootItem.lootTableItem(ModBlocks.COCONUT_PALM_LEAVES.get())
                                 .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS))))
-                        // それ以外は frond を 1～3 個
+
                         .add(LootItem.lootTableItem(ModItems.COCONUT_PALM_LEAF.get())
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
                                 .when(InvertedLootItemCondition.invert(

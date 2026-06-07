@@ -32,6 +32,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
         //作業台などの「木材」を使うレシピに適用
         this.copy(BlockTags.PLANKS, ItemTags.PLANKS);
+        this.copy(BlockTags.SLABS, ItemTags.SLABS);
+        this.copy(BlockTags.WOODEN_SLABS, ItemTags.WOODEN_SLABS);
         //this.copy(BlockTags.SAPLINGS, ItemTags.SAPLINGS);
 
 

@@ -86,6 +86,11 @@ public  class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.COCONUT_PALM_THATCH_SLAB.get()
         );
 
+        this.tag(BlockTags.WOODEN_SLABS).add(
+                ModBlocks.COCONUT_PALM_SLAB.get()
+        );
+
+
         this.tag(BlockTags.STAIRS).add(
                 ModBlocks.COCONUT_PALM_STAIRS.get(),
                 ModBlocks.COCONUT_PALM_THATCH_ROOF.get()
