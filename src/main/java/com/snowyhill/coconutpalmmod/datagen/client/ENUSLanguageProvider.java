@@ -55,7 +55,7 @@ public class ENUSLanguageProvider extends LanguageProvider {
         addItem(ModItems.HIBISCUS_FLOWER, "Hibiscus Flower");
 
         addEntityType(ModEntities.MOD_CHEST_BOAT, "Boat with Chest");
-        add("creativetabs.Mod_tab", "appletreemod");
+        add("creativetabs.Mod_tab", "coconutpalmmod");
         
 
     }

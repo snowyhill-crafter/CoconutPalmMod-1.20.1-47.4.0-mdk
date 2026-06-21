@@ -21,8 +21,5 @@ public class ModButtonBlock extends ButtonBlock {
 
 
 
-    @Override
-    public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-        return 20; // 木材と同じ
-    }
+
 }

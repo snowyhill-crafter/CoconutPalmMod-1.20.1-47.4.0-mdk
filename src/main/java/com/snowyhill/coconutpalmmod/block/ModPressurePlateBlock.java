@@ -14,8 +14,4 @@ public class ModPressurePlateBlock extends PressurePlateBlock {
         super(Sensitivity.EVERYTHING, properties, BlockSetType.OAK);
     }
 
-    @Override
-    public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-        return 20; // 拡散速度
-    }
 }

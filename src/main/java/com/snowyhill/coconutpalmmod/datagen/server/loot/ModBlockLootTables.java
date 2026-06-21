@@ -48,7 +48,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         //指定しないとドアが二つドロップしてしまうので対処した
         this.add(ModBlocks.COCONUT_PALM_DOOR.get(),
                 createDoorTable(ModBlocks.COCONUT_PALM_DOOR.get()));
-        // ORNAMENTAL_* 系の葉。素手だとドロップなし、ハサミで壊すと自分をドロップ
+
 
         // 立て看板 → sign をドロップ
         this.add(ModBlocks.COCONUT_PALM_SIGN.get(),

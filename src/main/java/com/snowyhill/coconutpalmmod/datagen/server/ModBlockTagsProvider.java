@@ -28,6 +28,8 @@ public  class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.STRIPPED_COCONUT_PALM_WOOD.get()
         );
 
+
+
         this.tag(BlockTags.LEAVES)
                 .add(
                         ModBlocks.COCONUT_PALM_LEAVES.get(),
@@ -73,10 +75,6 @@ public  class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.COCONUT_PALM_WALL_HANGING_SIGN.get()
         );
 
-        this.tag(BlockTags.SAPLINGS).add(
-                ModBlocks.COCONUT_PALM_SPROUTS.get()
-        );
-
 
         this.tag(BlockTags.PLANKS).add(
                 ModBlocks.COCONUT_PALM_PLANKS.get()
@@ -95,22 +93,51 @@ public  class ModBlockTagsProvider extends BlockTagsProvider {
                 ModBlocks.COCONUT_PALM_STAIRS.get(),
                 ModBlocks.COCONUT_PALM_THATCH_ROOF.get()
         );
+
+        this.tag(BlockTags.WOODEN_STAIRS).add(
+                ModBlocks.COCONUT_PALM_STAIRS.get()
+         );
+
         this.tag(BlockTags.FENCES).add(
                 ModBlocks.COCONUT_PALM_FENCE.get()
         );
+
+        this.tag(BlockTags.WOODEN_FENCES).add(
+                ModBlocks.COCONUT_PALM_FENCE.get()
+        );
+
         this.tag(BlockTags.FENCE_GATES).add(
                 ModBlocks.COCONUT_PALM_FENCE_GATE.get()
         );
+
         this.tag(BlockTags.DOORS).add(
                 ModBlocks.COCONUT_PALM_DOOR.get()
-          );
+        );
+
+        this.tag(BlockTags.WOODEN_DOORS).add(
+                ModBlocks.COCONUT_PALM_DOOR.get()
+        );
+
         this.tag(BlockTags.TRAPDOORS).add(
                 ModBlocks.COCONUT_PALM_TRAPDOOR.get()
         );
+        this.tag(BlockTags.WOODEN_TRAPDOORS).add(
+                ModBlocks.COCONUT_PALM_TRAPDOOR.get()
+        );
+
         this.tag(BlockTags.BUTTONS).add(
                 ModBlocks.COCONUT_PALM_BUTTON.get()
         );
+
+        this.tag(BlockTags.WOODEN_BUTTONS).add(
+                ModBlocks.COCONUT_PALM_BUTTON.get()
+        );
+
         this.tag(BlockTags.PRESSURE_PLATES).add(
+                ModBlocks.COCONUT_PALM_PRESSURE_PLATE.get()
+        );
+
+        this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(
                 ModBlocks.COCONUT_PALM_PRESSURE_PLATE.get()
         );
 

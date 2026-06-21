@@ -13,10 +13,4 @@ public class ModDoorBlock extends DoorBlock {
         super(properties, BlockSetType.OAK);  // ← これが正しい
     }
 
-
-
-    @Override
-    public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-        return 20; // 拡散も木材と同じ
-    }
 }
