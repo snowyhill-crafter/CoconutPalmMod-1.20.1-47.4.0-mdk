@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mature_coconut": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "coconutpalmmod:mature_coconut"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "coconutpalmmod:sliced_coconut"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mature_coconut",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "coconutpalmmod:sliced_coconut"
+    ]
+  },
+  "sends_telemetry_event": false
+}

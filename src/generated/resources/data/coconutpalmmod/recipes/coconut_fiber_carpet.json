@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "coconutpalmmod:coconut_fiber_block"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "item": "coconutpalmmod:coconut_fiber_carpet"
+  },
+  "show_notification": true
+}

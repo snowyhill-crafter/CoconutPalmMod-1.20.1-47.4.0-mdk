@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "coconutpalmmod:mature_coconut"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "coconutpalmmod:sliced_coconut"
+  }
+}

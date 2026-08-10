@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "coconutpalmmod:block/coconut_fiber_block"
+  }
+}

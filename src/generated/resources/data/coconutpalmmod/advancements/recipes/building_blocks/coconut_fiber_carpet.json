@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coconut_fiber_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "coconutpalmmod:coconut_fiber_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "coconutpalmmod:coconut_fiber_carpet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_coconut_fiber_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "coconutpalmmod:coconut_fiber_carpet"
+    ]
+  },
+  "sends_telemetry_event": false
+}

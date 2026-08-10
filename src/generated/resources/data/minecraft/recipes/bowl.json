@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "coconutpalmmod:coconut_shell"
+    }
+  ],
+  "result": {
+    "item": "minecraft:bowl"
+  }
+}

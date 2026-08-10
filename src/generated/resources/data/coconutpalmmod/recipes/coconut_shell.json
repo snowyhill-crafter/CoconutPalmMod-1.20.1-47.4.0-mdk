@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "coconutpalmmod:sliced_coconut"
+    }
+  ],
+  "result": {
+    "item": "coconutpalmmod:coconut_shell"
+  }
+}
