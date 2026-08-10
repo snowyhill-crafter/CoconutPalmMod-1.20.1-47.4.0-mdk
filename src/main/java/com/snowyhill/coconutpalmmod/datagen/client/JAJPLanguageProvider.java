@@ -5,7 +5,6 @@ import com.snowyhill.coconutpalmmod.CoconutPalmMod;
 import com.snowyhill.coconutpalmmod.registry.ModBlocks;
 import com.snowyhill.coconutpalmmod.registry.ModEntities;
 import com.snowyhill.coconutpalmmod.registry.ModItems;
-import com.snowyhill.coconutpalmmod.worldgen.tree.CoconutPalmTreeGrower;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -45,18 +44,27 @@ public class JAJPLanguageProvider extends LanguageProvider {
 
         addItem(ModItems.GREEN_COCONUT, "緑色のココナッツ");
         addItem(ModItems.MATURE_COCONUT, "熟れたココナッツ");
+        addItem(ModItems.SLICED_COCONUT, "切ったココナッツ");
+        addItem(ModItems.COCONUT_SHELL, "ココナッツの殻");
+        addItem(ModItems.COCONUT_FIBER, "ココヤシ繊維");
+        addBlock(ModBlocks.COCONUT_FIBER_BLOCK, "ココヤシ繊維ブロック");
+        addBlock(ModBlocks.COCONUT_FIBER_CARPET, "ココヤシ繊維カーペット");
         addBlock(ModBlocks.COCONUT_PALM_LEAVES, "ココヤシの葉");
         addItem(ModItems.COCONUT_PALM_LEAF, "切り出したココヤシの葉");
         addItem(ModItems.COCONUT_PALM_THATCH_ITEM, "ココヤシの葉葺き");
         addItem(ModItems.COCONUT_PALM_THATCH_SLAB_ITEM, "ココヤシの葉葺きのハーフブロック");
         addItem(ModItems.COCONUT_PALM_THATCH_ROOF_ITEM, "ココヤシの葉葺きの屋根");
 
-        addBlock(ModBlocks.HIBISCUS, "ハイビスカス");
+        addBlock(ModBlocks.HIBISCUS_MAGENTA, "マゼンタのハイビスカス");
+        addBlock(ModBlocks.HIBISCUS_PINK, "ピンクのハイビスカス");
+        addBlock(ModBlocks.HIBISCUS_ORANGE, "オレンジのハイビスカス");
         addBlock(ModBlocks.HIBISCUS_LEAVES, "ハイビスカスの葉");
-        addBlock(ModBlocks.FLOWERING_HIBISCUS_LEAVES, "開花したハイビスカスの葉");
-        addItem(ModItems.HIBISCUS_FLOWER, "ハイビスカスの花");
-
-
+        addBlock(ModBlocks.FLOWERING_HIBISCUS_MAGENTA_LEAVES, "マゼンタのハイビスカスの葉");
+        addBlock(ModBlocks.FLOWERING_HIBISCUS_PINK_LEAVES, "ピンクのハイビスカスの葉");
+        addBlock(ModBlocks.FLOWERING_HIBISCUS_ORANGE_LEAVES, "オレンジのハイビスカスの葉");
+        addItem(ModItems.HIBISCUS_MAGENTA_FLOWER, "マゼンタのハイビスカスの花");
+        addItem(ModItems.HIBISCUS_PINK_FLOWER, "ピンクのハイビスカスの花");
+        addItem(ModItems.HIBISCUS_ORANGE_FLOWER, "オレンジのハイビスカスの花");
 
         addEntityType(ModEntities.MOD_CHEST_BOAT, "チェスト付きのボート");
         add("creativetabs.Mod_tab", "ココヤシの木MOD");

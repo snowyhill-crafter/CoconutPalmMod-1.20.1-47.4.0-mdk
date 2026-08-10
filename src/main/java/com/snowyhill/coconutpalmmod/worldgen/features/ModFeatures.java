@@ -1,12 +1,10 @@
 package com.snowyhill.coconutpalmmod.worldgen.features;
 
 import com.snowyhill.coconutpalmmod.CoconutPalmMod;
-import com.snowyhill.coconutpalmmod.block.HibiscusBlock;
 import com.snowyhill.coconutpalmmod.registry.ModBlocks;
 import com.snowyhill.coconutpalmmod.worldgen.features.decorator.CoconutPalmFruitDecorator;
 import com.snowyhill.coconutpalmmod.worldgen.features.foliage.PalmFoliagePlacer;
 import com.snowyhill.coconutpalmmod.worldgen.features.trunk.CoconutTrunkPlacer;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -71,8 +69,16 @@ public class ModFeatures {
             registerKey("coconut_palm_tree");
 
     public static final ResourceKey<net.minecraft.world.level.levelgen.feature.ConfiguredFeature<?, ?>>
-            HIBISCUS_BUSH_KEY =
-            registerKey("hibiscus_bush");
+            HIBISCUS_MAGENTA_BUSH_KEY =
+            registerKey("hibiscus_magenta_bush");
+
+    public static final ResourceKey<net.minecraft.world.level.levelgen.feature.ConfiguredFeature<?, ?>>
+            HIBISCUS_PINK_BUSH_KEY =
+            registerKey("hibiscus_pink_bush");
+
+    public static final ResourceKey<net.minecraft.world.level.levelgen.feature.ConfiguredFeature<?, ?>>
+            HIBISCUS_ORANGE_BUSH_KEY =
+            registerKey("hibiscus_orange_bush");
 
     // =========================================================
     // bootstrap
@@ -151,13 +157,13 @@ public class ModFeatures {
 
         FeatureUtils.register(
                 context,
-                HIBISCUS_BUSH_KEY,
+                HIBISCUS_MAGENTA_BUSH_KEY,
                 Feature.TREE,
 
                 new TreeConfiguration.TreeConfigurationBuilder(
 
                         BlockStateProvider.simple(
-                                Blocks.OAK_LOG
+                                Blocks.JUNGLE_LOG
                         ),
 
                         new StraightTrunkPlacer(
@@ -180,7 +186,56 @@ public class ModFeatures {
                                         )
 
                                         .add(
-                                                ModBlocks.FLOWERING_HIBISCUS_LEAVES.get()
+                                                ModBlocks.FLOWERING_HIBISCUS_MAGENTA_LEAVES.get()
+                                                        .defaultBlockState()
+                                                        .setValue(
+                                                                LeavesBlock.PERSISTENT,
+                                                                false
+                                                        ),
+                                                1
+                                        )
+                                        .build()
+                        ),
+                        new BlobFoliagePlacer(
+                                ConstantInt.of(2),
+                                ConstantInt.of(0),
+                                1
+                        ),
+                        new TwoLayersFeatureSize(
+                                1,
+                                0,
+                                1
+                        ))
+                        .dirt(
+                                BlockStateProvider.simple(
+                                        Blocks.GRASS_BLOCK
+                                ))
+                        .ignoreVines()
+                        .build()
+        );
+
+        FeatureUtils.register(
+                context,
+                HIBISCUS_PINK_BUSH_KEY,
+                Feature.TREE,
+
+                new TreeConfiguration.TreeConfigurationBuilder(
+
+                        BlockStateProvider.simple(
+                                Blocks.JUNGLE_LOG
+                        ),
+
+                        new StraightTrunkPlacer(
+                                1,
+                                0,
+                                0
+                        ),
+
+                        new WeightedStateProvider(
+                                SimpleWeightedRandomList.<BlockState>builder()
+
+                                        .add(
+                                                ModBlocks.HIBISCUS_LEAVES.get()
                                                         .defaultBlockState()
                                                         .setValue(
                                                                 LeavesBlock.PERSISTENT,
@@ -189,27 +244,90 @@ public class ModFeatures {
                                                 1
                                         )
 
+                                        .add(
+                                                ModBlocks.FLOWERING_HIBISCUS_PINK_LEAVES.get()
+                                                        .defaultBlockState()
+                                                        .setValue(
+                                                                LeavesBlock.PERSISTENT,
+                                                                false
+                                                        ),
+                                                1
+                                        )
                                         .build()
                         ),
-
                         new BlobFoliagePlacer(
                                 ConstantInt.of(2),
                                 ConstantInt.of(0),
                                 1
                         ),
-
                         new TwoLayersFeatureSize(
                                 1,
                                 0,
                                 1
-                        )
-
-                )
+                        ))
                         .dirt(
                                 BlockStateProvider.simple(
                                         Blocks.GRASS_BLOCK
-                                )
-                        )
+                                ))
+                        .ignoreVines()
+                        .build()
+        );
+
+        FeatureUtils.register(
+                context,
+                HIBISCUS_ORANGE_BUSH_KEY,
+                Feature.TREE,
+
+                new TreeConfiguration.TreeConfigurationBuilder(
+
+                        BlockStateProvider.simple(
+                                Blocks.JUNGLE_LOG
+                        ),
+
+                        new StraightTrunkPlacer(
+                                1,
+                                0,
+                                0
+                        ),
+
+                        new WeightedStateProvider(
+                                SimpleWeightedRandomList.<BlockState>builder()
+
+                                        .add(
+                                                ModBlocks.HIBISCUS_LEAVES.get()
+                                                        .defaultBlockState()
+                                                        .setValue(
+                                                                LeavesBlock.PERSISTENT,
+                                                                false
+                                                        ),
+                                                1
+                                        )
+
+                                        .add(
+                                                ModBlocks.FLOWERING_HIBISCUS_ORANGE_LEAVES.get()
+                                                        .defaultBlockState()
+                                                        .setValue(
+                                                                LeavesBlock.PERSISTENT,
+                                                                false
+                                                        ),
+                                                1
+                                        )
+                                        .build()
+                        ),
+                        new BlobFoliagePlacer(
+                                ConstantInt.of(2),
+                                ConstantInt.of(0),
+                                1
+                        ),
+                        new TwoLayersFeatureSize(
+                                1,
+                                0,
+                                1
+                        ))
+                        .dirt(
+                                BlockStateProvider.simple(
+                                        Blocks.GRASS_BLOCK
+                                ))
                         .ignoreVines()
                         .build()
         );

@@ -6,6 +6,7 @@ import com.snowyhill.coconutpalmmod.entity.ModBoatEntity;
 import com.snowyhill.coconutpalmmod.item.GreenCoconutItem;
 import com.snowyhill.coconutpalmmod.item.MatureCoconutItem;
 import com.snowyhill.coconutpalmmod.item.ModBoatItem;
+import com.snowyhill.coconutpalmmod.item.SlicedCoconutItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -153,7 +154,7 @@ public class ModItems {
             "green_coconut",
             () -> new GreenCoconutItem(new Item.Properties()
                     .food(new FoodProperties.Builder()
-                            .nutrition(3)        // 満腹度（お好みで）
+                            .nutrition(4)        // 満腹度（お好みで）
                             .saturationMod(0.6f)  // 満腹度
                             .build()))
     );
@@ -161,21 +162,58 @@ public class ModItems {
     // 植え付け用の熟れたココナッツ）
     public static final RegistryObject<Item> MATURE_COCONUT = ITEMS.register(
             "mature_coconut",
-            () -> new MatureCoconutItem(new Item.Properties()
-                    .food(new FoodProperties.Builder()
-                            .nutrition(1)        // 満腹度（お好みで）
-                            .build()))
-
-
+            () -> new MatureCoconutItem(new Item.Properties())
     );
+
+    public static final RegistryObject<Item> SLICED_COCONUT = ITEMS.register(
+            "sliced_coconut",
+            () -> new SlicedCoconutItem(new Item.Properties()
+                    .food(new FoodProperties.Builder()
+                            .nutrition(2)
+                            .build()))
+    );
+
+    public static final RegistryObject<Item> COCONUT_SHELL = ITEMS.register(
+            "coconut_shell",
+            () -> new Item(new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> COCONUT_FIBER = ITEMS.register(
+            "coconut_fiber",
+            () -> new Item(new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> COCONUT_FIBER_BLOCK_ITEM = ITEMS.register(
+            "coconut_fiber_block",
+            () -> new BlockItem(ModBlocks.COCONUT_FIBER_BLOCK.get(), new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> COCONUT_FIBER_CARPET_ITEM = ITEMS.register(
+            "coconut_fiber_carpet",
+            () -> new BlockItem(ModBlocks.COCONUT_FIBER_CARPET.get(), new Item.Properties())
+    );
+
+
 
     public static final RegistryObject<Item> COCONUT_PALM_LEAF = ITEMS.register(
             "coconut_palm_leaf",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> HIBISCUS_ITEM = ITEMS.register(
-            "hibiscus",
-            () -> new BlockItem(ModBlocks.HIBISCUS.get(), new Item.Properties())
+
+
+    public static final RegistryObject<Item> HIBISCUS_MAGENTA_ITEM = ITEMS.register(
+            "hibiscus_magenta",
+            () -> new BlockItem(ModBlocks.HIBISCUS_MAGENTA.get(), new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> HIBISCUS_PINK_ITEM = ITEMS.register(
+            "hibiscus_pink",
+            () -> new BlockItem(ModBlocks.HIBISCUS_PINK.get(), new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> HIBISCUS_ORANGE_ITEM = ITEMS.register(
+            "hibiscus_orange",
+            () -> new BlockItem(ModBlocks.HIBISCUS_ORANGE.get(), new Item.Properties())
     );
 
     public static final RegistryObject<Item> HIBISCUS_LEAVES_ITEM = ITEMS.register(
@@ -183,13 +221,31 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.HIBISCUS_LEAVES.get(), new Item.Properties())
     );
 
-    public static final RegistryObject<Item> FLOWERING_HIBISCUS_LEAVES_ITEM = ITEMS.register(
-            "flowering_hibiscus_leaves",
-            () -> new BlockItem(ModBlocks.FLOWERING_HIBISCUS_LEAVES.get(), new Item.Properties())
+    public static final RegistryObject<Item> FLOWERING_HIBISCUS_MAGENTA_LEAVES_ITEM = ITEMS.register(
+            "flowering_hibiscus_magenta_leaves",
+            () -> new BlockItem(ModBlocks.FLOWERING_HIBISCUS_MAGENTA_LEAVES.get(), new Item.Properties())
     );
 
-    public static final RegistryObject<Item> HIBISCUS_FLOWER = ITEMS.register(
-            "hibiscus_flower",
+    public static final RegistryObject<Item> FLOWERING_HIBISCUS_PINK_LEAVES_ITEM = ITEMS.register(
+            "flowering_hibiscus_pink_leaves",
+            () -> new BlockItem(ModBlocks.FLOWERING_HIBISCUS_PINK_LEAVES.get(), new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> FLOWERING_HIBISCUS_ORANGE_LEAVES_ITEM = ITEMS.register(
+            "flowering_hibiscus_orange_leaves",
+            () -> new BlockItem(ModBlocks.FLOWERING_HIBISCUS_ORANGE_LEAVES.get(), new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> HIBISCUS_MAGENTA_FLOWER = ITEMS.register(
+            "hibiscus_magenta_flower",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> HIBISCUS_PINK_FLOWER = ITEMS.register(
+            "hibiscus_pink_flower",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> HIBISCUS_ORANGE_FLOWER = ITEMS.register(
+            "hibiscus_orange_flower",
             () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {

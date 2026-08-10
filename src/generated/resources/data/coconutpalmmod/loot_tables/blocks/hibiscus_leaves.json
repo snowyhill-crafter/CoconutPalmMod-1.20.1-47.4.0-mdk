@@ -17,27 +17,6 @@
             }
           ],
           "name": "coconutpalmmod:hibiscus_leaves"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "chance": 0.25,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:inverted",
-              "term": {
-                "condition": "minecraft:match_tool",
-                "predicate": {
-                  "items": [
-                    "minecraft:shears"
-                  ]
-                }
-              }
-            }
-          ],
-          "name": "coconutpalmmod:hibiscus"
         }
       ],
       "rolls": 1.0

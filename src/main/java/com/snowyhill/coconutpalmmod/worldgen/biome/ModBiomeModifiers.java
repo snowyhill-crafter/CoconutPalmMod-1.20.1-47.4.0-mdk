@@ -55,10 +55,17 @@ public class ModBiomeModifiers {
         TagKey<Biome> HibiscusBushBiomeTag = TagKey.create(Registries.BIOME,
                 new ResourceLocation("coconutpalmmod", "hibiscus_bush_spawnable"));
 
-        context.register(ADD_HIBISCUS_BUSH,
+        context.register(
+                ADD_HIBISCUS_BUSH,
                 new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                        biomes.getOrThrow(HibiscusBushBiomeTag), // ✅ biomeタグとして扱う
-                        HolderSet.direct(placedFeatures.getOrThrow(ModPlacement.HIBISCUS_BUSH)),
+                        biomes.getOrThrow(ModBiomeTags.HIBISCUS_BUSH_SPAWNABLE),
+
+                        HolderSet.direct(
+                                placedFeatures.getOrThrow(ModPlacement.HIBISCUS_MAGENTA_BUSH),
+                                placedFeatures.getOrThrow(ModPlacement.HIBISCUS_PINK_BUSH),
+                                placedFeatures.getOrThrow(ModPlacement.HIBISCUS_ORANGE_BUSH)
+                        ),
+
                         GenerationStep.Decoration.VEGETAL_DECORATION
                 )
         );

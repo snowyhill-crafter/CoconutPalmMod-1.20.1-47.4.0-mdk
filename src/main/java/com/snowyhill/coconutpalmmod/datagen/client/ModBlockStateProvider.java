@@ -67,19 +67,61 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         ModBlocks.COCONUT_PALM_PRESSURE_PLATE.get(),
                 blockTexture(ModBlocks.COCONUT_PALM_PLANKS.get()));
 
+        simpleBlockWithItem(ModBlocks.COCONUT_FIBER_BLOCK);
+
+        simpleBlock(
+                ModBlocks.COCONUT_FIBER_CARPET.get(),
+                models().withExistingParent("coconut_fiber_carpet", mcLoc("block/carpet"))
+                        .texture("wool", modLoc("block/coconut_fiber_block"))
+        );
+
+        simpleBlockItem(
+                ModBlocks.COCONUT_FIBER_CARPET.get(),
+                models().withExistingParent("coconut_fiber_carpet", mcLoc("block/carpet"))
+                        .texture("wool", modLoc("block/coconut_fiber_block"))
+        );
+
+
         simpleBlockWithItem(
-                ModBlocks.HIBISCUS.get(),
+                ModBlocks.HIBISCUS_MAGENTA.get(),
                 models().withExistingParent(
-                                "hibiscus",
+                                "hibiscus_magenta",
                                 mcLoc("block/azalea")
                         )
-                        .texture("top", modLoc("block/hibiscus_top"))
-                        .texture("side", modLoc("block/hibiscus_side"))
+                        .texture("top", modLoc("block/hibiscus_magenta_top"))
+                        .texture("side", modLoc("block/hibiscus_magenta_side"))
                         .texture("plant", modLoc("block/hibiscus_plant"))
                         .renderType("cutout")
         );
+
+        simpleBlockWithItem(
+                ModBlocks.HIBISCUS_PINK.get(),
+                models().withExistingParent(
+                                "hibiscus_pink",
+                                mcLoc("block/azalea")
+                        )
+                        .texture("top", modLoc("block/hibiscus_pink_top"))
+                        .texture("side", modLoc("block/hibiscus_pink_side"))
+                        .texture("plant", modLoc("block/hibiscus_plant"))
+                        .renderType("cutout")
+        );
+
+        simpleBlockWithItem(
+                ModBlocks.HIBISCUS_ORANGE.get(),
+                models().withExistingParent(
+                                "hibiscus_orange",
+                                mcLoc("block/azalea")
+                        )
+                        .texture("top", modLoc("block/hibiscus_orange_top"))
+                        .texture("side", modLoc("block/hibiscus_orange_side"))
+                        .texture("plant", modLoc("block/hibiscus_plant"))
+                        .renderType("cutout")
+        );
+
         simpleLeaves(ModBlocks.HIBISCUS_LEAVES);
-        simpleLeaves(ModBlocks.FLOWERING_HIBISCUS_LEAVES);
+        simpleLeaves(ModBlocks.FLOWERING_HIBISCUS_MAGENTA_LEAVES);
+        simpleLeaves(ModBlocks.FLOWERING_HIBISCUS_PINK_LEAVES);
+        simpleLeaves(ModBlocks.FLOWERING_HIBISCUS_ORANGE_LEAVES);
         //horizontalBlock(ModBlocks.COCONUT_PALM_THATCH.get(),
                 //models().cubeAll("coconut_palm_thatch", modLoc("block/coconut_palm_thatch")));
         //item(ModBlocks.COCONUT_PALM_THATCH);

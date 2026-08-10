@@ -33,7 +33,7 @@ public  class ModBlockTagsProvider extends BlockTagsProvider {
         this.tag(BlockTags.LEAVES)
                 .add(
                         ModBlocks.COCONUT_PALM_LEAVES.get(),
-                        ModBlocks.FLOWERING_HIBISCUS_LEAVES.get(),
+                        ModBlocks.FLOWERING_HIBISCUS_MAGENTA_LEAVES.get(),
                         ModBlocks.HIBISCUS_LEAVES.get()
                 );
 

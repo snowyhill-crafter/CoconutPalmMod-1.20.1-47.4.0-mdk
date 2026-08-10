@@ -103,9 +103,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                         .add(LootItem.lootTableItem(ModItems.MATURE_COCONUT.get())
                         )));
 
-        this.dropSelf(ModBlocks.HIBISCUS.get());
+        this.dropSelf(ModBlocks.COCONUT_FIBER_BLOCK.get());
+        this.dropSelf(ModBlocks.COCONUT_FIBER_CARPET.get());
 
 
+        this.dropSelf(ModBlocks.HIBISCUS_MAGENTA.get());
+        this.dropSelf(ModBlocks.HIBISCUS_PINK.get());
+        this.dropSelf(ModBlocks.HIBISCUS_ORANGE.get());
+        
         this.add(ModBlocks.HIBISCUS_LEAVES.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -117,7 +122,38 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                                 )))
 
                         // 通常破壊なら低確率でHIBISCUS
-                        .add(LootItem.lootTableItem(ModBlocks.HIBISCUS.get())
+                       // .add(LootItem.lootTableItem(ModBlocks.HIBISCUS_MAGENTA.get())
+                        //        .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                        //        .when(InvertedLootItemCondition.invert(
+                        //                MatchTool.toolMatches(
+                        //                        ItemPredicate.Builder.item().of(Items.SHEARS)
+                         //               )
+                         //       )))
+                )
+        );
+
+
+
+        this.add(ModBlocks.FLOWERING_HIBISCUS_MAGENTA_LEAVES.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+
+                        // ハサミなら葉そのもの
+                        .add(LootItem.lootTableItem(ModBlocks.FLOWERING_HIBISCUS_MAGENTA_LEAVES.get())
+                                .when(MatchTool.toolMatches(
+                                        ItemPredicate.Builder.item().of(Items.SHEARS)
+                                )))
+
+                        // 通常破壊なら hibiscus flower 確定
+                        .add(LootItem.lootTableItem(ModItems.HIBISCUS_MAGENTA_FLOWER.get())
+                                .when(InvertedLootItemCondition.invert(
+                                        MatchTool.toolMatches(
+                                                ItemPredicate.Builder.item().of(Items.SHEARS)
+                                        )
+                                )))
+
+                        // 通常破壊なら低確率でHIBISCUS
+                        .add(LootItem.lootTableItem(ModBlocks.HIBISCUS_MAGENTA.get())
                                 .when(LootItemRandomChanceCondition.randomChance(0.25F))
                                 .when(InvertedLootItemCondition.invert(
                                         MatchTool.toolMatches(
@@ -127,20 +163,18 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 )
         );
 
-
-
-        this.add(ModBlocks.FLOWERING_HIBISCUS_LEAVES.get(), LootTable.lootTable()
+        this.add(ModBlocks.FLOWERING_HIBISCUS_PINK_LEAVES.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
 
                         // ハサミなら葉そのもの
-                        .add(LootItem.lootTableItem(ModBlocks.FLOWERING_HIBISCUS_LEAVES.get())
+                        .add(LootItem.lootTableItem(ModBlocks.FLOWERING_HIBISCUS_PINK_LEAVES.get())
                                 .when(MatchTool.toolMatches(
                                         ItemPredicate.Builder.item().of(Items.SHEARS)
                                 )))
 
                         // 通常破壊なら hibiscus flower 確定
-                        .add(LootItem.lootTableItem(ModItems.HIBISCUS_FLOWER.get())
+                        .add(LootItem.lootTableItem(ModItems.HIBISCUS_PINK_FLOWER.get())
                                 .when(InvertedLootItemCondition.invert(
                                         MatchTool.toolMatches(
                                                 ItemPredicate.Builder.item().of(Items.SHEARS)
@@ -148,7 +182,36 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                                 )))
 
                         // 通常破壊なら低確率でHIBISCUS
-                        .add(LootItem.lootTableItem(ModBlocks.HIBISCUS.get())
+                        .add(LootItem.lootTableItem(ModBlocks.HIBISCUS_PINK.get())
+                                .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                .when(InvertedLootItemCondition.invert(
+                                        MatchTool.toolMatches(
+                                                ItemPredicate.Builder.item().of(Items.SHEARS)
+                                        )
+                                )))
+                )
+        );
+
+        this.add(ModBlocks.FLOWERING_HIBISCUS_ORANGE_LEAVES.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+
+                        // ハサミなら葉そのもの
+                        .add(LootItem.lootTableItem(ModBlocks.FLOWERING_HIBISCUS_ORANGE_LEAVES.get())
+                                .when(MatchTool.toolMatches(
+                                        ItemPredicate.Builder.item().of(Items.SHEARS)
+                                )))
+
+                        // 通常破壊なら hibiscus flower 確定
+                        .add(LootItem.lootTableItem(ModItems.HIBISCUS_ORANGE_FLOWER.get())
+                                .when(InvertedLootItemCondition.invert(
+                                        MatchTool.toolMatches(
+                                                ItemPredicate.Builder.item().of(Items.SHEARS)
+                                        )
+                                )))
+
+                        // 通常破壊なら低確率でHIBISCUS
+                        .add(LootItem.lootTableItem(ModBlocks.HIBISCUS_ORANGE.get())
                                 .when(LootItemRandomChanceCondition.randomChance(0.25F))
                                 .when(InvertedLootItemCondition.invert(
                                         MatchTool.toolMatches(

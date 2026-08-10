@@ -25,8 +25,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         //ここにアイテムを追加して自動生成させる
         basicItem(ModItems.GREEN_COCONUT.get());
         basicItem(ModItems.MATURE_COCONUT.get());
+        basicItem(ModItems.SLICED_COCONUT.get());
+        basicItem(ModItems.COCONUT_SHELL.get());
+        basicItem(ModItems.COCONUT_FIBER.get());
         basicItem(ModItems.COCONUT_PALM_LEAF.get());
-        basicItem(ModItems.HIBISCUS_FLOWER.get());
+        basicItem(ModItems.HIBISCUS_MAGENTA_FLOWER.get());
+        basicItem(ModItems.HIBISCUS_PINK_FLOWER.get());
+        basicItem(ModItems.HIBISCUS_ORANGE_FLOWER.get());
 
         itemWithBlock(ModBlocks.COCONUT_PALM_SLAB);
         itemWithBlock(ModBlocks.COCONUT_PALM_STAIRS);

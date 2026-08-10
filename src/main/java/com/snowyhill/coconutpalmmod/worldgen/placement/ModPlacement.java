@@ -14,7 +14,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
-import com.google.common.collect.ImmutableList;
+
 import java.util.List;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
@@ -27,8 +27,14 @@ public class ModPlacement {
             createKey("coconut_palm_tree");
 
 
-    public static final ResourceKey<PlacedFeature> HIBISCUS_BUSH =
-            createKey("hibiscus_bush");
+    public static final ResourceKey<PlacedFeature> HIBISCUS_MAGENTA_BUSH =
+            createKey("hibiscus_magenta_bush");
+
+    public static final ResourceKey<PlacedFeature> HIBISCUS_PINK_BUSH =
+            createKey("hibiscus_pink_bush");
+
+    public static final ResourceKey<PlacedFeature> HIBISCUS_ORANGE_BUSH =
+            createKey("hibiscus_orange_bush");
 
     public static final ResourceKey<PlacedFeature> JUNGLE_BUSH =
             createKey("jungle_bush");
@@ -54,34 +60,53 @@ public class ModPlacement {
 
 
 
-        PlacementUtils.register(context, HIBISCUS_BUSH,
-                configuredFeatures.getOrThrow(ModFeatures.HIBISCUS_BUSH_KEY),
-
-                CountPlacement.of(3),
-
+        PlacementUtils.register(context, HIBISCUS_MAGENTA_BUSH,
+                configuredFeatures.getOrThrow(ModFeatures.HIBISCUS_MAGENTA_BUSH_KEY),
+                CountPlacement.of(1),
                 InSquarePlacement.spread(),
-
                 PlacementUtils.HEIGHTMAP,
-
                 BlockPredicateFilter.forPredicate(
                         BlockPredicate.matchesBlocks(
                                 new BlockPos(0, -1, 0),
-                                Blocks.GRASS_BLOCK
-                        )
-                ),
-
+                                Blocks.GRASS_BLOCK)),
                 // ★寒冷バイオーム隣接時は生成しない
                 BeachGrassPatchPlacement.of(0),
-
                 BiomeFilter.biome()
         );
 
+        PlacementUtils.register(context, HIBISCUS_PINK_BUSH,
+                configuredFeatures.getOrThrow(ModFeatures.HIBISCUS_PINK_BUSH_KEY),
+                CountPlacement.of(1),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BlockPredicateFilter.forPredicate(
+                        BlockPredicate.matchesBlocks(
+                                new BlockPos(0, -1, 0),
+                                Blocks.GRASS_BLOCK)),
+                // ★寒冷バイオーム隣接時は生成しない
+                BeachGrassPatchPlacement.of(0),
+                BiomeFilter.biome()
+        );
+
+        PlacementUtils.register(context, HIBISCUS_ORANGE_BUSH,
+                configuredFeatures.getOrThrow(ModFeatures.HIBISCUS_ORANGE_BUSH_KEY),
+                CountPlacement.of(1),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BlockPredicateFilter.forPredicate(
+                        BlockPredicate.matchesBlocks(
+                                new BlockPos(0, -1, 0),
+                                Blocks.GRASS_BLOCK)),
+                // ★寒冷バイオーム隣接時は生成しない
+                BeachGrassPatchPlacement.of(0),
+                BiomeFilter.biome()
+        );
 
         PlacementUtils.register(context, JUNGLE_BUSH,
 
                 configuredFeatures.getOrThrow(TreeFeatures.JUNGLE_BUSH),
 
-                CountPlacement.of(3),
+                CountPlacement.of(1),
 
                 InSquarePlacement.spread(),
 

@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/azalea",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "plant": "coconutpalmmod:block/hibiscus_plant",
-    "side": "coconutpalmmod:block/hibiscus_side",
-    "top": "coconutpalmmod:block/hibiscus_top"
-  }
-}

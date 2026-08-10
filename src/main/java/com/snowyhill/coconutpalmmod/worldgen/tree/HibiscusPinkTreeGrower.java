@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import org.jetbrains.annotations.Nullable;
 
-public class HibiscusTreeGrower extends AbstractTreeGrower {
+public class HibiscusPinkTreeGrower extends AbstractTreeGrower {
 
     @Nullable
     @Override
@@ -15,6 +15,6 @@ public class HibiscusTreeGrower extends AbstractTreeGrower {
             RandomSource random,
             boolean hasFlowers
     ) {
-        return ModFeatures.HIBISCUS_BUSH_KEY;
+        return ModFeatures.HIBISCUS_PINK_BUSH_KEY;
     }
 }

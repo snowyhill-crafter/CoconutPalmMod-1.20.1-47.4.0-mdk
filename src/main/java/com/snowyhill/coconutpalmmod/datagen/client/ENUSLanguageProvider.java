@@ -43,16 +43,27 @@ public class ENUSLanguageProvider extends LanguageProvider {
 
         addItem(ModItems.GREEN_COCONUT, "Green Coconut");
         addItem(ModItems.MATURE_COCONUT, "Mature Coconut");
+        addItem(ModItems.SLICED_COCONUT, "Sliced Coconut");
+        addItem(ModItems.COCONUT_SHELL, "Coconut Shell");
+        addItem(ModItems.COCONUT_FIBER, "Coconut Fiber");
+        addBlock(ModBlocks.COCONUT_FIBER_BLOCK, "Coconut Fiber Block");
+        addBlock(ModBlocks.COCONUT_FIBER_CARPET, "Coconut Fiber Carpet");
         addBlock(ModBlocks.COCONUT_PALM_LEAVES, "Coconut Palm Leaves");
         addItem(ModItems.COCONUT_PALM_LEAF, "Coconut Palm leaf");
         addItem(ModItems.COCONUT_PALM_THATCH_ITEM, "Coconut Palm Thatch");
         addItem(ModItems.COCONUT_PALM_THATCH_SLAB_ITEM, "Coconut Palm Thatch Slab");
         addItem(ModItems.COCONUT_PALM_THATCH_ROOF_ITEM, "Coconut Palm Thatch Roof");
 
-        addBlock(ModBlocks.HIBISCUS, "Hibiscus");
+        addBlock(ModBlocks.HIBISCUS_MAGENTA, "Magenta Hibiscus");
+        addBlock(ModBlocks.HIBISCUS_PINK, "Pink Hibiscus");
+        addBlock(ModBlocks.HIBISCUS_ORANGE, "Orange Hibiscus");
         addBlock(ModBlocks.HIBISCUS_LEAVES, "Hibiscus Leaves");
-        addBlock(ModBlocks.FLOWERING_HIBISCUS_LEAVES, "Flowering Hibiscus Leaves");
-        addItem(ModItems.HIBISCUS_FLOWER, "Hibiscus Flower");
+        addBlock(ModBlocks.FLOWERING_HIBISCUS_MAGENTA_LEAVES, "Magenta Hibiscus Leaves");
+        addBlock(ModBlocks.FLOWERING_HIBISCUS_PINK_LEAVES, "Pink Hibiscus Leaves");
+        addBlock(ModBlocks.FLOWERING_HIBISCUS_ORANGE_LEAVES, "Orange Hibiscus Leaves");
+        addItem(ModItems.HIBISCUS_MAGENTA_FLOWER, "Magenta Hibiscus Flower");
+        addItem(ModItems.HIBISCUS_PINK_FLOWER, "Pink Hibiscus Flower");
+        addItem(ModItems.HIBISCUS_ORANGE_FLOWER, "Orange Hibiscus Flower");
 
         addEntityType(ModEntities.MOD_CHEST_BOAT, "Boat with Chest");
         add("creativetabs.Mod_tab", "coconutpalmmod");

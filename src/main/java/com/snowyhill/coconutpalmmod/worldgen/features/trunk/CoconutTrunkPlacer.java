@@ -56,6 +56,8 @@ public class CoconutTrunkPlacer extends TrunkPlacer {
                                                             TreeConfiguration config) {
         setPalmBaseAt(level, placer, random, start.below(), config);
 
+        boolean straight = random.nextFloat() < 0.2F;
+
         int startOffset = Mth.clamp(this.bendStartOffset.sample(random), 1, Math.max(1, height - 1));
         int bendStartY = height - startOffset;
 
@@ -68,8 +70,11 @@ public class CoconutTrunkPlacer extends TrunkPlacer {
         for (int y = 0; y < height; y++) {
             placeLog(level, placer, random, pos, config);
 
-            if (y >= bendStartY && bentSteps < bendLength
-                    && ((y - bendStartY) % bendEvery) == 0) {
+            if (!straight &&
+                    y >= bendStartY &&
+                    bentSteps < bendLength &&
+                    ((y - bendStartY) % bendEvery) == 0) {
+
                 pos.move(bendDir);
                 bentSteps++;
             }

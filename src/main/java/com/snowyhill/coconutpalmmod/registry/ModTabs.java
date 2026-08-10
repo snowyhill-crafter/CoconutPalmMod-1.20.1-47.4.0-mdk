@@ -45,16 +45,26 @@ public class ModTabs {
 
                         pOutput.accept(ModItems.GREEN_COCONUT.get());
                         pOutput.accept(ModItems.MATURE_COCONUT.get());
+                        pOutput.accept(ModItems.SLICED_COCONUT.get());
+                        pOutput.accept(ModItems.COCONUT_SHELL.get());
+                        pOutput.accept(ModItems.COCONUT_FIBER.get());
+                        pOutput.accept(ModItems.COCONUT_FIBER_BLOCK_ITEM.get());
+                        pOutput.accept(ModItems.COCONUT_FIBER_CARPET_ITEM.get());
                         pOutput.accept(ModItems.COCONUT_PALM_LEAF.get());
                         pOutput.accept(ModItems.COCONUT_PALM_LEAVES_ITEM.get());
                         pOutput.accept(ModItems.COCONUT_PALM_THATCH_ITEM.get());
                         pOutput.accept(ModItems.COCONUT_PALM_THATCH_SLAB_ITEM.get());
                         pOutput.accept(ModItems.COCONUT_PALM_THATCH_ROOF_ITEM.get());
-                        pOutput.accept(ModItems.HIBISCUS_ITEM.get());
+                        pOutput.accept(ModItems.HIBISCUS_MAGENTA_ITEM.get());
+                        pOutput.accept(ModItems.HIBISCUS_PINK_ITEM.get());
+                        pOutput.accept(ModItems.HIBISCUS_ORANGE_ITEM.get());
                         pOutput.accept(ModItems.HIBISCUS_LEAVES_ITEM.get());
-                        pOutput.accept(ModItems.FLOWERING_HIBISCUS_LEAVES_ITEM.get());
-                        pOutput.accept(ModItems.HIBISCUS_FLOWER.get());
-                        
+                        pOutput.accept(ModItems.FLOWERING_HIBISCUS_MAGENTA_LEAVES_ITEM.get());
+                        pOutput.accept(ModItems.FLOWERING_HIBISCUS_PINK_LEAVES_ITEM.get());
+                        pOutput.accept(ModItems.FLOWERING_HIBISCUS_ORANGE_LEAVES_ITEM.get());
+                        pOutput.accept(ModItems.HIBISCUS_MAGENTA_FLOWER.get());
+                        pOutput.accept(ModItems.HIBISCUS_PINK_FLOWER.get());
+                        pOutput.accept(ModItems.HIBISCUS_ORANGE_FLOWER.get());
                     }))
                     .build());
 

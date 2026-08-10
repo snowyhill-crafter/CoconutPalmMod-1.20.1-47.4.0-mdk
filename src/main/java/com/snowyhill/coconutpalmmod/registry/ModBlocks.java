@@ -4,7 +4,9 @@ import com.snowyhill.coconutpalmmod.CoconutPalmMod;
 import com.snowyhill.coconutpalmmod.block.*;
 import com.snowyhill.coconutpalmmod.client.ModWoodTypes;
 import com.snowyhill.coconutpalmmod.worldgen.tree.CoconutPalmTreeGrower;
-import com.snowyhill.coconutpalmmod.worldgen.tree.HibiscusTreeGrower;
+import com.snowyhill.coconutpalmmod.worldgen.tree.HibiscusMagentaTreeGrower;
+import com.snowyhill.coconutpalmmod.worldgen.tree.HibiscusOrangeTreeGrower;
+import com.snowyhill.coconutpalmmod.worldgen.tree.HibiscusPinkTreeGrower;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -185,6 +187,14 @@ public class ModBlocks {
                             .randomTicks()
             ));
 
+    public static final RegistryObject<Block> COCONUT_FIBER_BLOCK = BLOCKS.register(
+            "coconut_fiber_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
+
+    public static final RegistryObject<Block> COCONUT_FIBER_CARPET = BLOCKS.register(
+            "coconut_fiber_carpet",
+            () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET))
+    );
 
     //植えた状態
     public static final RegistryObject<Block> COCONUT_PALM_SPROUTS = BLOCKS.register(
@@ -195,10 +205,26 @@ public class ModBlocks {
             )
     );
 
-    public static final RegistryObject<Block> HIBISCUS = BLOCKS.register(
-            "hibiscus",
+    public static final RegistryObject<Block> HIBISCUS_MAGENTA = BLOCKS.register(
+            "hibiscus_magenta",
             () -> new HibiscusBlock(
-                    new HibiscusTreeGrower(),
+                    new HibiscusMagentaTreeGrower(),
+                    BlockBehaviour.Properties.copy(Blocks.AZALEA)
+            )
+    );
+
+    public static final RegistryObject<Block> HIBISCUS_PINK = BLOCKS.register(
+            "hibiscus_pink",
+            () -> new HibiscusBlock(
+                    new HibiscusPinkTreeGrower(),
+                    BlockBehaviour.Properties.copy(Blocks.AZALEA)
+            )
+    );
+
+    public static final RegistryObject<Block> HIBISCUS_ORANGE = BLOCKS.register(
+            "hibiscus_orange",
+            () -> new HibiscusBlock(
+                    new HibiscusOrangeTreeGrower(),
                     BlockBehaviour.Properties.copy(Blocks.AZALEA)
             )
     );
@@ -213,15 +239,29 @@ public class ModBlocks {
 
 
 
-    public static final RegistryObject<Block> FLOWERING_HIBISCUS_LEAVES = BLOCKS.register(
-            "flowering_hibiscus_leaves",
+    public static final RegistryObject<Block> FLOWERING_HIBISCUS_MAGENTA_LEAVES = BLOCKS.register(
+            "flowering_hibiscus_magenta_leaves",
             () -> new ModLeavesBlock(
                     BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES)
                             .randomTicks()
             )
     );
 
+    public static final RegistryObject<Block> FLOWERING_HIBISCUS_PINK_LEAVES = BLOCKS.register(
+            "flowering_hibiscus_pink_leaves",
+            () -> new ModLeavesBlock(
+                    BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES)
+                            .randomTicks()
+            )
+    );
 
+    public static final RegistryObject<Block> FLOWERING_HIBISCUS_ORANGE_LEAVES = BLOCKS.register(
+            "flowering_hibiscus_orange_leaves",
+            () -> new ModLeavesBlock(
+                    BlockBehaviour.Properties.copy(Blocks.AZALEA_LEAVES)
+                            .randomTicks()
+            )
+    );
     /* ブロックアイテム作成用メソッド */
    // private static <T extends Block> RegistryObject<T> registerBlockItem(String name,
     //                                                                     Supplier<T> supplier) {

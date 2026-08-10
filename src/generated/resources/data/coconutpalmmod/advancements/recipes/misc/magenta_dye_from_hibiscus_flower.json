@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_hibiscus_flower": {
+    "has_hibiscus_magenta_flower": {
       "conditions": {
         "items": [
           {
             "items": [
-              "coconutpalmmod:hibiscus_flower"
+              "coconutpalmmod:hibiscus_magenta_flower"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_hibiscus_flower",
+      "has_hibiscus_magenta_flower",
       "has_the_recipe"
     ]
   ],

@@ -7,7 +7,6 @@ import com.snowyhill.coconutpalmmod.registry.ModItems;
 import com.snowyhill.coconutpalmmod.tag.ModTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -80,7 +79,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("###")
                 .pattern("###")
                 .pattern(" S ")
-                .unlockedBy("has_apple_planks", has(ModBlocks.COCONUT_PALM_PLANKS.get()))
+                .unlockedBy("has_coconut_palm_planks", has(ModBlocks.COCONUT_PALM_PLANKS.get()))
                 .save(pRecipeOutput);
 
         // --- 吊り看板（6個） ---
@@ -90,7 +89,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("C C")
                 .pattern("LLL")
                 .pattern("LLL")
-                .unlockedBy("has_stripped_apple_log", has(ModBlocks.STRIPPED_COCONUT_PALM_LOG.get()))
+                .unlockedBy("has_stripped_coconut_palm_log", has(ModBlocks.STRIPPED_COCONUT_PALM_LOG.get()))
                 .save(pRecipeOutput);
 
         // hibiscus flower → magenta dye
@@ -99,31 +98,104 @@ public class ModRecipeProvider extends RecipeProvider {
                         Items.MAGENTA_DYE,
                         1
                 )
-                .requires(ModItems.HIBISCUS_FLOWER.get())
+                .requires(ModItems.HIBISCUS_MAGENTA_FLOWER.get())
                 .unlockedBy(
-                        getHasName(ModItems.HIBISCUS_FLOWER.get()),
-                        has(ModItems.HIBISCUS_FLOWER.get())
+                        getHasName(ModItems.HIBISCUS_MAGENTA_FLOWER.get()),
+                        has(ModItems.HIBISCUS_MAGENTA_FLOWER.get())
                 )
                 .save(
                         pRecipeOutput,
                         CoconutPalmMod.MOD_ID + ":magenta_dye_from_hibiscus_flower"
                 );
 
+        ShapelessRecipeBuilder.shapeless(
+                        RecipeCategory.MISC,
+                        Items.PINK_DYE,
+                        1
+                )
+                .requires(ModItems.HIBISCUS_PINK_FLOWER.get())
+                .unlockedBy(
+                        getHasName(ModItems.HIBISCUS_PINK_FLOWER.get()),
+                        has(ModItems.HIBISCUS_PINK_FLOWER.get())
+                )
+                .save(
+                        pRecipeOutput,
+                        CoconutPalmMod.MOD_ID + ":pink_dye_from_hibiscus_flower"
+                );
+
+        ShapelessRecipeBuilder.shapeless(
+                        RecipeCategory.MISC,
+                        Items.ORANGE_DYE,
+                        1
+                )
+                .requires(ModItems.HIBISCUS_ORANGE_FLOWER.get())
+                .unlockedBy(
+                        getHasName(ModItems.HIBISCUS_ORANGE_FLOWER.get()),
+                        has(ModItems.HIBISCUS_ORANGE_FLOWER.get())
+                )
+                .save(
+                        pRecipeOutput,
+                        CoconutPalmMod.MOD_ID + ":orange_dye_from_hibiscus_flower"
+                );
 
 
-// 切り出したココヤシの葉 4枚 → ココヤシの葉ブロック 1個
-        //ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COCONUT_PALM_LEAVES.get())
-        //        .define('#', ModItems.COCONUT_PALM_LEAF.get())
-        //        .pattern("##")
-        //        .pattern("##")
-        //        .unlockedBy(getHasName(ModItems.COCONUT_PALM_LEAF.get()), has(ModItems.COCONUT_PALM_LEAF.get()))
-        //        .save(pRecipeOutput);
 
-// ココヤシの葉ブロック 1個 → 切り出したココヤシの葉 4枚
-        //ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COCONUT_PALM_LEAF.get(), 4)
-        //        .requires(ModBlocks.COCONUT_PALM_LEAVES.get())
-        //        .unlockedBy(getHasName(ModBlocks.COCONUT_PALM_LEAVES.get()), has(ModBlocks.COCONUT_PALM_LEAVES.get()))
-        //        .save(pRecipeOutput, CoconutPalmMod.MOD_ID + ":coconut_palm_leaf_from_leaves");
+        ShapelessRecipeBuilder.shapeless(
+                        RecipeCategory.FOOD,
+                        ModItems.SLICED_COCONUT.get(),
+                        2
+                )
+                .requires(ModItems.MATURE_COCONUT.get())
+                .unlockedBy(
+                        "has_mature_coconut",
+                        has(ModItems.MATURE_COCONUT.get())
+                )
+                .save(pRecipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(
+                        RecipeCategory.FOOD,
+                        ModItems.COCONUT_SHELL.get(),
+                        1
+                )
+                .requires(ModItems.SLICED_COCONUT.get())
+                .unlockedBy(
+                        "has_sliced_coconut",
+                        has(ModItems.SLICED_COCONUT.get())
+                )
+                .save(pRecipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(
+                        RecipeCategory.TOOLS,
+                        Items.BOWL,
+                        1
+                )
+                .requires(ModItems.COCONUT_SHELL.get())
+                .unlockedBy(
+                        "has_coconut_shell",
+                        has(ModItems.COCONUT_SHELL.get())
+                )
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COCONUT_FIBER.get())
+                .define('#', ModItems.COCONUT_SHELL.get())
+                .pattern("#")
+                .pattern("#")
+                .pattern("#")
+                .unlockedBy(getHasName(ModItems.COCONUT_SHELL.get()), has(ModItems.COCONUT_SHELL.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COCONUT_FIBER_BLOCK.get())
+                .define('#', ModItems.COCONUT_FIBER.get())
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy(getHasName(ModItems.COCONUT_FIBER.get()), has(ModItems.COCONUT_FIBER.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COCONUT_FIBER_CARPET.get())
+                .define('#', ModBlocks.COCONUT_FIBER_BLOCK.get())
+                .pattern("###")
+                .unlockedBy(getHasName(ModBlocks.COCONUT_FIBER_BLOCK.get()), has(ModBlocks.COCONUT_FIBER_BLOCK.get()))
+                .save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.COCONUT_PALM_THATCH.get())
                 .define('#', ModItems.COCONUT_PALM_LEAF.get())

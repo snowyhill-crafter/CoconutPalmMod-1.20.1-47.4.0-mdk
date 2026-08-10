@@ -1,6 +1,10 @@
 {
   "type": "forge:add_features",
   "biomes": "#coconutpalmmod:hibiscus_bush_spawnable",
-  "features": "coconutpalmmod:hibiscus_bush",
+  "features": [
+    "coconutpalmmod:hibiscus_magenta_bush",
+    "coconutpalmmod:hibiscus_pink_bush",
+    "coconutpalmmod:hibiscus_orange_bush"
+  ],
   "step": "vegetal_decoration"
 }

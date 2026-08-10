@@ -10,6 +10,7 @@ import net.minecraft.world.level.FoliageColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import com.snowyhill.coconutpalmmod.client.renderer.ModBedRenderer;
@@ -41,6 +42,9 @@ public class ClientModEvents {
                 ModItems.COCONUT_PALM_LEAVES_ITEM.get()
         );
     }
+
+
+
 
     //@SubscribeEvent
     //public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
