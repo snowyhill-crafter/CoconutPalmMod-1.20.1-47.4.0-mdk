@@ -16,6 +16,7 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
@@ -30,6 +31,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
+
+import static net.minecraft.data.worldgen.features.FeatureUtils.createKey;
 
 public class ModFeatures {
 
@@ -47,22 +50,22 @@ public class ModFeatures {
     // Feature登録
     // =========================================================
 
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>>
-            BEACH_GRASS_PATCH =
-            FEATURES.register(
-                    "beach_grass_patch",
-                    () -> new BeachGrassPatchFeature(
-                            NoneFeatureConfiguration.CODEC
-                    )
-            );
+//    public static final RegistryObject<Feature<NoneFeatureConfiguration>>
+//            BEACH_GRASS_PATCH =
+//            FEATURES.register(
+//                    "beach_grass_patch",
+//                    () -> new BeachGrassPatchFeature(
+//                            NoneFeatureConfiguration.CODEC
+//                    )
+//            );
 
     // =========================================================
     // ConfiguredFeature Keys
     // =========================================================
 
-    public static final ResourceKey<net.minecraft.world.level.levelgen.feature.ConfiguredFeature<?, ?>>
-            BEACH_GRASS_PATCH_KEY =
-            registerKey("beach_grass_patch");
+//    public static final ResourceKey<net.minecraft.world.level.levelgen.feature.ConfiguredFeature<?, ?>>
+//            BEACH_GRASS_PATCH_KEY =
+//            registerKey("beach_grass_patch");
 
     public static final ResourceKey<net.minecraft.world.level.levelgen.feature.ConfiguredFeature<?, ?>>
             COCONUT_PALM_TREE_KEY =
@@ -80,6 +83,15 @@ public class ModFeatures {
             HIBISCUS_ORANGE_BUSH_KEY =
             registerKey("hibiscus_orange_bush");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SHALLOW_WATER_KEY =
+            ResourceKey.create(
+                    Registries.CONFIGURED_FEATURE,
+                    new ResourceLocation(
+                            CoconutPalmMod.MOD_ID,
+                            "shallow_water"
+                    )
+            );
+
     // =========================================================
     // bootstrap
     // =========================================================
@@ -90,12 +102,12 @@ public class ModFeatures {
         // BEACH GRASS PATCH
         // =====================================================
 
-        FeatureUtils.register(
-                context,
-                BEACH_GRASS_PATCH_KEY,
-                BEACH_GRASS_PATCH.get(),
-                FeatureConfiguration.NONE
-        );
+//        FeatureUtils.register(
+//                context,
+//                BEACH_GRASS_PATCH_KEY,
+//                BEACH_GRASS_PATCH.get(),
+//                FeatureConfiguration.NONE
+//        );
 
         // =====================================================
         // COCONUT PALM TREE
@@ -331,6 +343,14 @@ public class ModFeatures {
                         .ignoreVines()
                         .build()
         );
+
+        FeatureUtils.register(
+                context,
+                SHALLOW_WATER_KEY,
+                ModFeatureTypes.SHALLOW_WATER.get()
+        );
+
+
     }
 
     // =========================================================

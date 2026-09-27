@@ -78,7 +78,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                                 .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS))))
 
                         .add(LootItem.lootTableItem(ModItems.COCONUT_PALM_LEAF.get())
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2)))
+                                .when(LootItemRandomChanceCondition.randomChance(0.2f))
                                 .when(InvertedLootItemCondition.invert(
                                         MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS))
                                 )))
@@ -108,9 +109,17 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
 
         this.dropSelf(ModBlocks.HIBISCUS_MAGENTA.get());
+        this.add(ModBlocks.POTTED_HIBISCUS_MAGENTA.get(),
+                pottedPlantLoot(ModBlocks.HIBISCUS_MAGENTA.get()));
+
         this.dropSelf(ModBlocks.HIBISCUS_PINK.get());
+        this.add(ModBlocks.POTTED_HIBISCUS_PINK.get(),
+                pottedPlantLoot(ModBlocks.HIBISCUS_PINK.get()));
+
         this.dropSelf(ModBlocks.HIBISCUS_ORANGE.get());
-        
+        this.add(ModBlocks.POTTED_HIBISCUS_ORANGE.get(),
+                pottedPlantLoot(ModBlocks.HIBISCUS_ORANGE.get()));
+
         this.add(ModBlocks.HIBISCUS_LEAVES.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -154,7 +163,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
                         // 通常破壊なら低確率でHIBISCUS
                         .add(LootItem.lootTableItem(ModBlocks.HIBISCUS_MAGENTA.get())
-                                .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                .when(LootItemRandomChanceCondition.randomChance(0.5F))
                                 .when(InvertedLootItemCondition.invert(
                                         MatchTool.toolMatches(
                                                 ItemPredicate.Builder.item().of(Items.SHEARS)
@@ -183,7 +192,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
                         // 通常破壊なら低確率でHIBISCUS
                         .add(LootItem.lootTableItem(ModBlocks.HIBISCUS_PINK.get())
-                                .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                .when(LootItemRandomChanceCondition.randomChance(0.5F))
                                 .when(InvertedLootItemCondition.invert(
                                         MatchTool.toolMatches(
                                                 ItemPredicate.Builder.item().of(Items.SHEARS)
@@ -212,7 +221,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
                         // 通常破壊なら低確率でHIBISCUS
                         .add(LootItem.lootTableItem(ModBlocks.HIBISCUS_ORANGE.get())
-                                .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                .when(LootItemRandomChanceCondition.randomChance(0.5F))
                                 .when(InvertedLootItemCondition.invert(
                                         MatchTool.toolMatches(
                                                 ItemPredicate.Builder.item().of(Items.SHEARS)

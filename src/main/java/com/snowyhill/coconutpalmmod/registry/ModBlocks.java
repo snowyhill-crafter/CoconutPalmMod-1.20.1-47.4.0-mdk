@@ -189,11 +189,11 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> COCONUT_FIBER_BLOCK = BLOCKS.register(
             "coconut_fiber_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
+            () -> new CoconutFiberBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
 
     public static final RegistryObject<Block> COCONUT_FIBER_CARPET = BLOCKS.register(
             "coconut_fiber_carpet",
-            () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET))
+            () -> new CoconutFiberCarpetBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET))
     );
 
     //植えた状態
@@ -205,6 +205,13 @@ public class ModBlocks {
             )
     );
 
+
+
+
+
+
+
+
     public static final RegistryObject<Block> HIBISCUS_MAGENTA = BLOCKS.register(
             "hibiscus_magenta",
             () -> new HibiscusBlock(
@@ -213,21 +220,36 @@ public class ModBlocks {
             )
     );
 
+    public static final RegistryObject<Block> POTTED_HIBISCUS_MAGENTA = BLOCKS.register(
+            "potted_hibiscus_magenta",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT,
+                    ModBlocks.HIBISCUS_MAGENTA,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_AZALEA)));
+
     public static final RegistryObject<Block> HIBISCUS_PINK = BLOCKS.register(
             "hibiscus_pink",
             () -> new HibiscusBlock(
                     new HibiscusPinkTreeGrower(),
-                    BlockBehaviour.Properties.copy(Blocks.AZALEA)
-            )
-    );
+                    BlockBehaviour.Properties.copy(Blocks.AZALEA)));
+
+    public static final RegistryObject<Block> POTTED_HIBISCUS_PINK = BLOCKS.register(
+            "potted_hibiscus_pink",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT,
+                    ModBlocks.HIBISCUS_PINK,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_AZALEA)));
 
     public static final RegistryObject<Block> HIBISCUS_ORANGE = BLOCKS.register(
             "hibiscus_orange",
             () -> new HibiscusBlock(
                     new HibiscusOrangeTreeGrower(),
-                    BlockBehaviour.Properties.copy(Blocks.AZALEA)
-            )
-    );
+                    BlockBehaviour.Properties.copy(Blocks.AZALEA)));
+
+    public static final RegistryObject<Block> POTTED_HIBISCUS_ORANGE = BLOCKS.register(
+            "potted_hibiscus_orange",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT,
+                    ModBlocks.HIBISCUS_ORANGE,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_AZALEA)));
+
 
     public static final RegistryObject<Block> HIBISCUS_LEAVES = BLOCKS.register(
             "hibiscus_leaves",
@@ -236,8 +258,6 @@ public class ModBlocks {
                             .randomTicks()
             )
     );
-
-
 
     public static final RegistryObject<Block> FLOWERING_HIBISCUS_MAGENTA_LEAVES = BLOCKS.register(
             "flowering_hibiscus_magenta_leaves",

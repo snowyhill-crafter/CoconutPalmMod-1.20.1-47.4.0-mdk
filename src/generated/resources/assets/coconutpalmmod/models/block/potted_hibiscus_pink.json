@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/potted_azalea_bush",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "plant": "coconutpalmmod:block/potted_hibiscus_plant",
+    "side": "coconutpalmmod:block/potted_hibiscus_pink_side",
+    "top": "coconutpalmmod:block/potted_hibiscus_pink_top"
+  }
+}

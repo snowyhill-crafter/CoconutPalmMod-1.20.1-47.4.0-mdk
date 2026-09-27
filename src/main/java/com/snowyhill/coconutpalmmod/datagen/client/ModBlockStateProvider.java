@@ -118,6 +118,46 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         .renderType("cutout")
         );
 
+// 鉢植えハイビスカス：マゼンタ
+        simpleBlock(
+                ModBlocks.POTTED_HIBISCUS_MAGENTA.get(),
+                models().withExistingParent(
+                                "potted_hibiscus_magenta",
+                                mcLoc("block/potted_azalea_bush")
+                        )
+                        .texture("top", modLoc("block/potted_hibiscus_magenta_top"))
+                        .texture("side", modLoc("block/potted_hibiscus_magenta_side"))
+                        .texture("plant", modLoc("block/potted_hibiscus_plant"))
+                        .renderType("cutout")
+        );
+
+// 鉢植えハイビスカス：ピンク
+        simpleBlock(
+                ModBlocks.POTTED_HIBISCUS_PINK.get(),
+                models().withExistingParent(
+                                "potted_hibiscus_pink",
+                                mcLoc("block/potted_azalea_bush")
+                        )
+                        .texture("top", modLoc("block/potted_hibiscus_pink_top"))
+                        .texture("side", modLoc("block/potted_hibiscus_pink_side"))
+                        .texture("plant", modLoc("block/potted_hibiscus_plant"))
+                        .renderType("cutout")
+        );
+
+// 鉢植えハイビスカス：オレンジ
+        simpleBlock(
+                ModBlocks.POTTED_HIBISCUS_ORANGE.get(),
+                models().withExistingParent(
+                                "potted_hibiscus_orange",
+                                mcLoc("block/potted_azalea_bush")
+                        )
+                        .texture("top", modLoc("block/potted_hibiscus_orange_top"))
+                        .texture("side", modLoc("block/potted_hibiscus_orange_side"))
+                        .texture("plant", modLoc("block/potted_hibiscus_plant"))
+                        .renderType("cutout")
+        );
+
+
         simpleLeaves(ModBlocks.HIBISCUS_LEAVES);
         simpleLeaves(ModBlocks.FLOWERING_HIBISCUS_MAGENTA_LEAVES);
         simpleLeaves(ModBlocks.FLOWERING_HIBISCUS_PINK_LEAVES);

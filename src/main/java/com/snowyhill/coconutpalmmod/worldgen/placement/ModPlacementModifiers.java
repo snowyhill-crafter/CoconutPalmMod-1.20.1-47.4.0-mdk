@@ -12,8 +12,8 @@ public class ModPlacementModifiers {
             DeferredRegister.create(Registries.PLACEMENT_MODIFIER_TYPE,
                     CoconutPalmMod.MOD_ID);
 
-    public static final RegistryObject<PlacementModifierType<BeachGrassPatchPlacement>>
-            BEACH_GRASS_PATCH =
-            PLACEMENT_MODIFIERS.register("beach_grass_patch",
-                    () -> () -> BeachGrassPatchPlacement.CODEC);
+    //public static final RegistryObject<PlacementModifierType<BeachGrassPatchPlacement>>
+    //        BEACH_GRASS_PATCH =
+    //        PLACEMENT_MODIFIERS.register("beach_grass_patch",
+    //                () -> () -> BeachGrassPatchPlacement.CODEC);
 }

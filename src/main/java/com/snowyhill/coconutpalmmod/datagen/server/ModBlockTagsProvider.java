@@ -21,6 +21,19 @@ public  class ModBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+
+
+        // 羊毛と同様にスカルクの振動を遮断する
+        this.tag(BlockTags.DAMPENS_VIBRATIONS).add(
+                ModBlocks.COCONUT_FIBER_BLOCK.get()
+        );
+
+        // 振動源 → スカルクセンサー間の振動を遮断
+        this.tag(BlockTags.OCCLUDES_VIBRATION_SIGNALS).add(
+                ModBlocks.COCONUT_FIBER_BLOCK.get()
+        );
+
+
         this.tag(BlockTags.LOGS_THAT_BURN).add(
                 ModBlocks.COCONUT_PALM_LOG.get(),
                 ModBlocks.STRIPPED_COCONUT_PALM_LOG.get(),

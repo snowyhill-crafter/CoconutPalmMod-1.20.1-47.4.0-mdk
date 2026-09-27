@@ -25,10 +25,6 @@
       }
     },
     {
-      "type": "coconutpalmmod:beach_grass_patch",
-      "value": 0
-    },
-    {
       "type": "minecraft:biome"
     }
   ]

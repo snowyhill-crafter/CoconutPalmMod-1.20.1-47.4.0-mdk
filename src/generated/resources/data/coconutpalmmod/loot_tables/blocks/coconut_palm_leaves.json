@@ -22,6 +22,10 @@
           "type": "minecraft:item",
           "conditions": [
             {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            },
+            {
               "condition": "minecraft:inverted",
               "term": {
                 "condition": "minecraft:match_tool",

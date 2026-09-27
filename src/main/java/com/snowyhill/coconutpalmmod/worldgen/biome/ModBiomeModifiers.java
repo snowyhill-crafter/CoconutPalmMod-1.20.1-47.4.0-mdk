@@ -40,7 +40,6 @@ public class ModBiomeModifiers {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 
 
-
         TagKey<Biome> CoconutPalmTreeBiomeTag = TagKey.create(Registries.BIOME,
                 new ResourceLocation("coconutpalmmod", "coconut_palm_tree_spawnable"));
 

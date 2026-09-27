@@ -7,6 +7,7 @@ import com.snowyhill.coconutpalmmod.worldgen.features.ModFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.features.AquaticFeatures;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
@@ -39,6 +40,16 @@ public class ModPlacement {
     public static final ResourceKey<PlacedFeature> JUNGLE_BUSH =
             createKey("jungle_bush");
 
+    public static final ResourceKey<PlacedFeature>
+            SHALLOW_WATER =
+            createKey("shallow_water");
+
+    public static final ResourceKey<PlacedFeature> TROPICAL_BEACH_CORAL =
+            createKey("tropical_beach_coral");
+
+
+
+
     public static void bootstap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures =
                 context.lookup(Registries.CONFIGURED_FEATURE);
@@ -47,15 +58,15 @@ public class ModPlacement {
         // 木の配置情報を設定
         List<PlacementModifier> coconutPlacements = new java.util.ArrayList<>(
                 VegetationPlacements.treePlacement(
-                        PlacementUtils.countExtra(1, 0.1f, 1),//発生頻度
+                        PlacementUtils.countExtra(1, 0.5f, 1),//発生頻度
                         ModBlocks.COCONUT_PALM_SPROUTS.get()
                 )
         );
 
-        coconutPlacements.add(BeachGrassPatchPlacement.of(4));//水との距離
+        //coconutPlacements.add(BeachGrassPatchPlacement.of(1));//水との距離
 
         PlacementUtils.register(context, COCONUT_PALM_TREE,
-                configuredFeatures.getOrThrow(ModFeatures.BEACH_GRASS_PATCH_KEY),
+                configuredFeatures.getOrThrow(ModFeatures.COCONUT_PALM_TREE_KEY),
                 coconutPlacements);
 
 
@@ -70,7 +81,7 @@ public class ModPlacement {
                                 new BlockPos(0, -1, 0),
                                 Blocks.GRASS_BLOCK)),
                 // ★寒冷バイオーム隣接時は生成しない
-                BeachGrassPatchPlacement.of(0),
+             //   BeachGrassPatchPlacement.of(0),
                 BiomeFilter.biome()
         );
 
@@ -84,7 +95,7 @@ public class ModPlacement {
                                 new BlockPos(0, -1, 0),
                                 Blocks.GRASS_BLOCK)),
                 // ★寒冷バイオーム隣接時は生成しない
-                BeachGrassPatchPlacement.of(0),
+                //BeachGrassPatchPlacement.of(0),
                 BiomeFilter.biome()
         );
 
@@ -98,7 +109,7 @@ public class ModPlacement {
                                 new BlockPos(0, -1, 0),
                                 Blocks.GRASS_BLOCK)),
                 // ★寒冷バイオーム隣接時は生成しない
-                BeachGrassPatchPlacement.of(0),
+                //BeachGrassPatchPlacement.of(0),
                 BiomeFilter.biome()
         );
 
@@ -120,8 +131,42 @@ public class ModPlacement {
                 ),
 
                 // ★寒冷バイオーム隣接時は生成しない
-                BeachGrassPatchPlacement.of(0),
+                //BeachGrassPatchPlacement.of(0),
 
+                BiomeFilter.biome()
+        );
+
+        PlacementUtils.register(
+                context,
+
+                SHALLOW_WATER,
+
+                configuredFeatures.getOrThrow(
+                        ModFeatures.SHALLOW_WATER_KEY
+                ),
+
+                // 1チャンクにつき候補2回
+                CountPlacement.of(2),
+
+                // チャンク内にランダム配置
+                InSquarePlacement.spread(),
+
+                // 海底位置を基準にする
+                PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
+
+                // このFeatureを登録したBiomeだけ
+                BiomeFilter.biome()
+        );
+
+
+        PlacementUtils.register(
+                context,
+                TROPICAL_BEACH_CORAL,
+                configuredFeatures.getOrThrow(AquaticFeatures.WARM_OCEAN_VEGETATION),
+
+                CountPlacement.of(2),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
                 BiomeFilter.biome()
         );
 

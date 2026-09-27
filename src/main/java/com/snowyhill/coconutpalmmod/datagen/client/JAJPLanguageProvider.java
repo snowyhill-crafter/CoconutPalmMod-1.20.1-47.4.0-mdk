@@ -67,6 +67,8 @@ public class JAJPLanguageProvider extends LanguageProvider {
         addItem(ModItems.HIBISCUS_ORANGE_FLOWER, "オレンジのハイビスカスの花");
 
         addEntityType(ModEntities.MOD_CHEST_BOAT, "チェスト付きのボート");
+        add("biome.coconutpalmmod.tropical_beach", "南国の砂浜");
+        add("biome.coconutpalmmod.coconut_palm_forest", "ココヤシの森");
         add("creativetabs.Mod_tab", "ココヤシの木MOD");
 
 

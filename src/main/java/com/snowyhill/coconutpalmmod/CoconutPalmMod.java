@@ -2,11 +2,17 @@ package com.snowyhill.coconutpalmmod;
 
 import com.mojang.logging.LogUtils;
 import com.snowyhill.coconutpalmmod.registry.*;
+import com.snowyhill.coconutpalmmod.worldgen.biome.ModOverworldRegion;
+import com.snowyhill.coconutpalmmod.worldgen.biome.ModSurfaceRuleData;
+import com.snowyhill.coconutpalmmod.worldgen.features.ModFeatureTypes;
 import com.snowyhill.coconutpalmmod.worldgen.features.ModFeatures;
 import com.snowyhill.coconutpalmmod.worldgen.features.decorator.ModTreeDecorators;
 import com.snowyhill.coconutpalmmod.worldgen.features.foliage.ModFoliagePlacers;
 import com.snowyhill.coconutpalmmod.worldgen.features.trunk.ModTrunkPlacers;
 import com.snowyhill.coconutpalmmod.worldgen.placement.ModPlacementModifiers;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -18,6 +24,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import terrablender.api.Regions;
+import terrablender.api.SurfaceRuleManager;
 
 
 @Mod(CoconutPalmMod.MOD_ID)
@@ -52,13 +60,43 @@ public class CoconutPalmMod
         ModEntities.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModFeatures.FEATURES.register(modEventBus);
+        ModFeatureTypes.register(modEventBus);
     }
 
 
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        //生成頻度
+        event.enqueueWork(() -> {
 
+            Regions.register(new ModOverworldRegion(
+                    new ResourceLocation(CoconutPalmMod.MOD_ID, "overworld"),
+                    6
+            ));
+
+            SurfaceRuleManager.addSurfaceRules(
+                    SurfaceRuleManager.RuleCategory.OVERWORLD,
+                    MOD_ID,
+                    ModSurfaceRuleData.makeRules()
+            );
+
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(
+                    ModBlocks.HIBISCUS_MAGENTA.getId(),
+                    ModBlocks.POTTED_HIBISCUS_MAGENTA
+            );
+
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(
+                    ModBlocks.HIBISCUS_PINK.getId(),
+                    ModBlocks.POTTED_HIBISCUS_PINK
+            );
+
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(
+                    ModBlocks.HIBISCUS_ORANGE.getId(),
+                    ModBlocks.POTTED_HIBISCUS_ORANGE
+            );
+
+        });
     }
 
 

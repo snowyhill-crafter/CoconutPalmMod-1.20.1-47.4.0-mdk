@@ -1,8 +1,5 @@
 package com.snowyhill.coconutpalmmod.datagen;
 
-
-
-
 import com.snowyhill.coconutpalmmod.CoconutPalmMod;
 import com.snowyhill.coconutpalmmod.datagen.client.ENUSLanguageProvider;
 import com.snowyhill.coconutpalmmod.datagen.client.JAJPLanguageProvider;
@@ -20,56 +17,157 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.concurrent.CompletableFuture;
 
-@Mod.EventBusSubscriber(modid = CoconutPalmMod.MOD_ID , bus = Mod.EventBusSubscriber.Bus.MOD )
+@Mod.EventBusSubscriber(
+        modid = CoconutPalmMod.MOD_ID,
+        bus = Mod.EventBusSubscriber.Bus.MOD
+)
 public class ModDataGenerators {
+
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
+
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        CompletableFuture<HolderLookup.Provider> lookUpProvider = event.getLookupProvider();
 
-        //ItemModel
-        generator.addProvider(event.includeClient(), new ModItemModelProvider(
-                packOutput , existingFileHelper));
-        //blockstate
-        generator.addProvider(event.includeClient(), new ModBlockStateProvider(
-                packOutput , existingFileHelper));
-        // 言語ファイル
-        generator.addProvider(event.includeClient(), new JAJPLanguageProvider(packOutput));
-        generator.addProvider(event.includeClient(), new ENUSLanguageProvider(packOutput));
-        //worldgen
-        generator.addProvider(event.includeServer(), new ModWorldGenProvider(
-                packOutput , lookUpProvider));
+        CompletableFuture<HolderLookup.Provider> lookUpProvider =
+                event.getLookupProvider();
 
-        // biome tags
-        generator.addProvider(event.includeServer(), new ModBiomeTagsProvider(
-                packOutput, lookUpProvider, existingFileHelper));
+        // =========================================================
+        // CLIENT
+        // =========================================================
 
-        //ブロックタグ
-        var blockTagsProvider = generator.addProvider(event.includeServer(),
-                new ModBlockTagsProvider(packOutput
-                        ,lookUpProvider, existingFileHelper));
+        // ItemModel
+        generator.addProvider(
+                event.includeClient(),
+                new ModItemModelProvider(
+                        packOutput,
+                        existingFileHelper
+                )
+        );
 
-        generator.addProvider(event.includeServer(), new ModItemTagsProvider(
-                packOutput, lookUpProvider, blockTagsProvider.contentsGetter(),
-                CoconutPalmMod.MOD_ID , existingFileHelper));
+        // BlockState
+        generator.addProvider(
+                event.includeClient(),
+                new ModBlockStateProvider(
+                        packOutput,
+                        existingFileHelper
+                )
+        );
 
+        // Language
+        generator.addProvider(
+                event.includeClient(),
+                new JAJPLanguageProvider(packOutput)
+        );
 
-
-
-        // レシピ
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
-       //ルートテーブル
-        generator.addProvider(event.includeServer(),  ModLootTables.create(packOutput, lookUpProvider));
-
-        // GlobalLootModifier
-        generator.addProvider(event.includeServer(),
-                new ModGlobalLootModifierProvider(packOutput));
+        generator.addProvider(
+                event.includeClient(),
+                new ENUSLanguageProvider(packOutput)
+        );
 
 
+        // =========================================================
+        // SERVER / WORLDGEN
+        // =========================================================
+
+        // ConfiguredFeature
+        // PlacedFeature
+        // BiomeModifier
+        // Custom Biome
+        //
+        // などのDynamic Registryを生成する
+        ModWorldGenProvider worldGenProvider =
+                generator.addProvider(
+                        event.includeServer(),
+                        new ModWorldGenProvider(
+                                packOutput,
+                                lookUpProvider
+                        )
+                );
 
 
+        // =========================================================
+        // BIOME TAGS
+        // =========================================================
+        //
+        // ★重要
+        //
+        // event.getLookupProvider() ではなく、
+        // ModWorldGenProviderで追加した
+        // tropical_beach等を含むRegistryProviderを渡す
+        //
+        generator.addProvider(
+                event.includeServer(),
+                new ModBiomeTagsProvider(
+                        packOutput,
+                        worldGenProvider.getRegistryProvider(),
+                        existingFileHelper
+                )
+        );
 
+
+        // =========================================================
+        // BLOCK TAGS
+        // =========================================================
+
+        ModBlockTagsProvider blockTagsProvider =
+                generator.addProvider(
+                        event.includeServer(),
+                        new ModBlockTagsProvider(
+                                packOutput,
+                                lookUpProvider,
+                                existingFileHelper
+                        )
+                );
+
+
+        // =========================================================
+        // ITEM TAGS
+        // =========================================================
+
+        generator.addProvider(
+                event.includeServer(),
+                new ModItemTagsProvider(
+                        packOutput,
+                        lookUpProvider,
+                        blockTagsProvider.contentsGetter(),
+                        CoconutPalmMod.MOD_ID,
+                        existingFileHelper
+                )
+        );
+
+
+        // =========================================================
+        // RECIPES
+        // =========================================================
+
+        generator.addProvider(
+                event.includeServer(),
+                new ModRecipeProvider(packOutput)
+        );
+
+
+        // =========================================================
+        // LOOT TABLES
+        // =========================================================
+
+        generator.addProvider(
+                event.includeServer(),
+                ModLootTables.create(
+                        packOutput,
+                        lookUpProvider
+                )
+        );
+
+
+        // =========================================================
+        // GLOBAL LOOT MODIFIER
+        // =========================================================
+
+        generator.addProvider(
+                event.includeServer(),
+                new ModGlobalLootModifierProvider(packOutput)
+        );
     }
 }
