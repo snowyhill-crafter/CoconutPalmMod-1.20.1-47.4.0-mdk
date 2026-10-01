@@ -123,6 +123,12 @@
         "maxCount": 4,
         "minCount": 4,
         "weight": 8
+      },
+      {
+        "type": "minecraft:parrot",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 16
       }
     ],
     "misc": [],

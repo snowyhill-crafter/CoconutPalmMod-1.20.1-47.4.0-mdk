@@ -55,16 +55,16 @@ public class JAJPLanguageProvider extends LanguageProvider {
         addItem(ModItems.COCONUT_PALM_THATCH_SLAB_ITEM, "ココヤシの葉葺きのハーフブロック");
         addItem(ModItems.COCONUT_PALM_THATCH_ROOF_ITEM, "ココヤシの葉葺きの屋根");
 
-        addBlock(ModBlocks.HIBISCUS_MAGENTA, "マゼンタのハイビスカス");
-        addBlock(ModBlocks.HIBISCUS_PINK, "ピンクのハイビスカス");
-        addBlock(ModBlocks.HIBISCUS_ORANGE, "オレンジのハイビスカス");
+        addBlock(ModBlocks.HIBISCUS_MAGENTA, "赤紫色のハイビスカス");
+        addBlock(ModBlocks.HIBISCUS_PINK, "桃色のハイビスカス");
+        addBlock(ModBlocks.HIBISCUS_ORANGE, "橙色のハイビスカス");
         addBlock(ModBlocks.HIBISCUS_LEAVES, "ハイビスカスの葉");
-        addBlock(ModBlocks.FLOWERING_HIBISCUS_MAGENTA_LEAVES, "マゼンタのハイビスカスの葉");
-        addBlock(ModBlocks.FLOWERING_HIBISCUS_PINK_LEAVES, "ピンクのハイビスカスの葉");
-        addBlock(ModBlocks.FLOWERING_HIBISCUS_ORANGE_LEAVES, "オレンジのハイビスカスの葉");
+        addBlock(ModBlocks.FLOWERING_HIBISCUS_MAGENTA_LEAVES, "赤紫色のハイビスカスの葉");
+        addBlock(ModBlocks.FLOWERING_HIBISCUS_PINK_LEAVES, "桃色のハイビスカスの葉");
+        addBlock(ModBlocks.FLOWERING_HIBISCUS_ORANGE_LEAVES, "橙色のハイビスカスの葉");
         addItem(ModItems.HIBISCUS_MAGENTA_FLOWER, "マゼンタのハイビスカスの花");
-        addItem(ModItems.HIBISCUS_PINK_FLOWER, "ピンクのハイビスカスの花");
-        addItem(ModItems.HIBISCUS_ORANGE_FLOWER, "オレンジのハイビスカスの花");
+        addItem(ModItems.HIBISCUS_PINK_FLOWER, "桃色のハイビスカスの花");
+        addItem(ModItems.HIBISCUS_ORANGE_FLOWER, "橙色のハイビスカスの花");
 
         addEntityType(ModEntities.MOD_CHEST_BOAT, "チェスト付きのボート");
         add("biome.coconutpalmmod.tropical_beach", "南国の砂浜");

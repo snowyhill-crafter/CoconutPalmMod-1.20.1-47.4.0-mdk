@@ -220,7 +220,10 @@ public class ModBiomes {
          * Tropical Beachと違い
          * TURTLEは追加しない。
          */
-
+        spawnBuilder.addSpawn(
+                MobCategory.CREATURE,
+                new MobSpawnSettings.SpawnerData(EntityType.PARROT, 16, 2, 4)
+        );
 
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(

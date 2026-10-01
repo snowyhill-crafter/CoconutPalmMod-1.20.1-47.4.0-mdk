@@ -72,7 +72,7 @@ public class CoconutPalmMod
 
             Regions.register(new ModOverworldRegion(
                     new ResourceLocation(CoconutPalmMod.MOD_ID, "overworld"),
-                    6
+                    7
             ));
 
             SurfaceRuleManager.addSurfaceRules(
